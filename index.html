@@ -93,22 +93,35 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 .chromato-jar.running .band-chlorophyll-b{bottom:35px;height:16px;opacity:0.9}
 .chromato-jar.running .chromato-spot{opacity:0}
 
-/* CSS Pin điện hóa mục 3 (Giống mẫu pin-zn-cu-cau-muoi) */
-.cell-stage{display:none;position:relative;min-height:280px;width:100%;align-items:center;justify-content:center;gap:15px;padding:20px}
+/* CSS Pin điện hóa mục 3 (Giống hệt ảnh mẫu bạn cung cấp) */
+.cell-stage{display:none;position:relative;min-height:310px;width:100%;align-items:center;justify-content:center;gap:10px;padding:15px}
 .cell-stage.active{display:flex}
-.half-cell{position:relative;width:110px;height:180px;border:2px solid #a6d8e8;border-top:none;border-radius:0 0 20px 20px;background:rgba(200,241,255,0.08);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
-.half-liquid{position:absolute;bottom:0;left:0;right:0;height:70%;transition:background 0.3s}
+.cell-container{position:relative;width:100%;max-width:440px;height:240px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,42,62,0.6);border:1px solid #1d536a;border-radius:14px;padding:15px}
+.half-cell{position:relative;width:95px;height:145px;border:2px solid #a6d8e8;border-top:none;border-radius:0 0 16px 16px;background:rgba(200,241,255,0.08);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.half-liquid{position:absolute;bottom:0;left:0;right:0;height:65%}
 .zinc-solution{background:linear-gradient(90deg,#ffffff15,#d7f6ff25,#ffffff12)}
 .copper-solution{background:linear-gradient(90deg,#4aa9e866,#6cbbe777,#4196d055)}
-.electrode{position:absolute;top:10px;width:18px;height:120px;border-radius:3px;z-index:3}
+.electrode{position:absolute;top:10px;width:14px;height:95px;border-radius:3px;z-index:3}
 .zinc-electrode{background:linear-gradient(90deg,#b0c4de,#d3d3d3,#808080);border:1px solid #708090}
 .copper-electrode{background:linear-gradient(90deg,#e3963e,#f5b35c,#b8621b);border:1px solid #8c4109}
-.salt-bridge{position:relative;width:70px;height:90px;margin-top:-60px;border:4px solid #d5ecf5;border-bottom:none;border-radius:35px 35px 0 0;background:rgba(213,236,245,0.25);z-index:4;display:flex;align-items:center;justify-content:center}
-.salt-bridge-label{position:absolute;top:25px;font-size:9px;color:#fff;background:rgba(11,117,109,0.8);padding:1px 4px;border-radius:4px;white-space:nowrap}
-.cell-wire{position:absolute;top:10px;left:50px;right:50px;height:25px;border-top:3px dashed #ffe36e;z-index:4}
-.electron-dot{position:absolute;top:-6px;left:10px;width:10px;height:10px;border-radius:50%;background:#ffe36e;box-shadow:0 0 8px #ffe36e;display:none}
-.cell-stage.running .electron-dot{display:block;animation:moveElectron 1.2s linear infinite}
-@keyframes moveElectron{0%{left:10px;}100%{left:calc(100% - 20px);}}
+
+.salt-bridge{position:absolute;top:25px;left:50%;transform:translateX(-50%);width:150px;height:75px;border:4px solid #b5dbe8;border-bottom:none;border-radius:75px 75px 0 0;background:rgba(213,236,245,0.22);z-index:4;display:flex;align-items:center;justify-content:center;transition:all 0.4s ease}
+.salt-bridge.removed{transform:translateX(-50%) translateY(-30px) scale(0.9);opacity:0;pointer-events:none}
+.salt-bridge-label{position:absolute;top:18px;font-size:9px;color:#fff;background:rgba(11,117,109,0.9);padding:1px 6px;border-radius:4px;white-space:nowrap}
+
+.cell-wire{position:absolute;top:10px;left:45px;right:45px;height:35px;border-top:3px solid #b87333;z-index:4;display:flex;align-items:center;justify-content:center}
+.light-bulb{position:absolute;top:-12px;width:24px;height:24px;border-radius:50%;background:#444;border:2px solid #888;display:flex;align-items:center;justify-content:center;box-shadow:0 0 5px rgba(0,0,0,0.5);z-index:5;transition:all 0.3s}
+.cell-stage.running .light-bulb{background:#ffd700;box-shadow:0 0 15px #ffd700, 0 0 25px #ff8c00}
+
+.electron-particle{position:absolute;width:6px;height:6px;background:#ffe36e;border-radius:50%;box-shadow:0 0 6px #ffe36e;z-index:6;display:none}
+.cell-stage.running .electron-particle{display:block;animation: moveElectron 1.5s linear infinite}
+@keyframes moveElectron{0%{transform:translateX(-80px)}100%{transform:translateX(80px)}}
+
+.ion-particle{position:absolute;width:12px;height:12px;border-radius:50%;font-size:8px;font-weight:bold;display:flex;align-items:center;justify-content:center;color:#fff;z-index:5;display:none}
+.cell-stage.running .ion-particle{display:flex;animation: moveIon 2s ease-in-out infinite}
+.ion-k{background:#e67e22;}
+.ion-cl{background:#27ae60;}
+@keyframes moveIon{0%{transform:translate(0,0)}50%{transform:translate(15px,15px)}100%{transform:translate(0,0)}}
 
 @media(max-width:700px){header{align-items:flex-start;padding:15px;flex-direction:column}.header-tag{white-space:normal}.brand h1{font-size:21px}.layout{padding:12px}.sidebar{grid-template-columns:repeat(5,minmax(0,1fr))}.grid,.bottom-grid{grid-template-columns:1fr}.intro{align-items:flex-start;flex-direction:column}.scene{min-height:300px;padding:18px 8px 12px}.scene-inner{min-height:255px;gap:2px}.bottle{width:65px}.bottle-shape{width:55px;height:100px}.stand{width:80px;min-width:80px;height:220px}.buret{height:130px}.flask{width:95px;height:130px}.bottle-label{font-size:10px}.bottle small{font-size:9px}.controls .spacer{display:none}.speed{width:100%;justify-content:flex-start}.equation{font-size:15px}.panel-head{padding:13px}.stat strong{font-size:20px}}
 </style>
@@ -276,19 +289,19 @@ function setExp(key){
         $('#scene-title').textContent='Pin Galvani (Zn - Cu)';
         $('#scene-subtitle').textContent='Zn | Zn²⁺ || Cu²⁺ | Cu';
         $('#scene-caption').textContent='Cầu muối nối hai nửa tế bào pin';
-        $('#stat-label-one').textContent='Dòng electron';
-        $('#stat-label-two').textContent='Chiều dòng điện';
-        $('#volume').textContent='Zn → Cu';
-        $('#ph').textContent='Mạch ngoài';
-        $('#volume-note').textContent='Anode (-) sang Cathode (+)';
-        $('#ph-note').textContent='Cầu muối khép kín mạch';
+        $('#stat-label-one').textContent='Trạng thái cầu muối';
+        $('#stat-label-two').textContent='Trạng thái bóng đèn';
+        $('#volume').textContent='Đã lắp cầu muối';
+        $('#ph').textContent='Đèn sáng';
+        $('#volume-note').textContent='Dòng điện khép kín';
+        $('#ph-note').textContent='Ion trung hòa điện';
         $('#equation').textContent='Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)';
-        $('#observation').innerHTML='<strong>Pin điện hóa sẵn sàng:</strong> Nhấn nút "Bắt đầu pin" để quan sát electron chạy qua dây dẫn ngoài.';
-        $('#explanation').textContent='Kẽm oxi hóa ở anode, ion đồng khử ở cathode.';
-        $('#add-one').textContent='▶ Bắt đầu pin';
-        $('#add-five').textContent='↻ Đổi trạng thái';
+        $('#observation').innerHTML='<strong>Có cầu muối:</strong> Dòng electron được duy trì qua mạch ngoài, ion di chuyển qua cầu muối, bóng đèn sáng.';
+        $('#explanation').textContent='Kẽm oxi hóa ở anode, ion đồng khử ở cathode. Cầu muối là cầu nối duy trì cân bằng điện tích.';
+        $('#add-one').textContent='🔌 Tháo / Lắp cầu muối';
+        $('#add-five').textContent='⏸ Tạm dừng';
         $('#auto-run').classList.add('hidden');
-        $('#status').textContent='Chờ chạy';
+        $('#status').textContent='Pin hoạt động';
         $('#curve').setAttribute('d','');
         $('#chart-point').style.display='none';
     }else if(key==='separation'){
@@ -312,11 +325,24 @@ function add(v){
         }
     }else if(experiment==='cell'){
         const cellStage=$('#cell-stage');
-        if(cellStage){
-            cellStage.classList.toggle('running');
-            const isRunning=cellStage.classList.contains('running');
-            $('#status').textContent=isRunning?'Pin hoạt động':'Đã dừng';
-            $('#observation').innerHTML=isRunning?'<strong>Pin đang phóng điện:</strong> Electron dịch chuyển từ cực Zn sang cực Cu qua dây dẫn ngoài.':'<strong>Đã tạm dừng pin.</strong>';
+        const bridge=$('#salt-bridge');
+        if(cellStage && bridge){
+            const isRemoved=bridge.classList.contains('removed');
+            if(isRemoved){
+                bridge.classList.remove('removed');
+                cellStage.classList.add('running');
+                $('#volume').textContent='Đã lắp cầu muối';
+                $('#ph').textContent='Đèn sáng';
+                $('#status').textContent='Pin hoạt động';
+                $('#observation').innerHTML='<strong>Có cầu muối:</strong> Dòng electron được duy trì, ion cân bằng điện tích, đèn sáng.';
+            } else {
+                bridge.classList.add('removed');
+                cellStage.classList.remove('running');
+                $('#volume').textContent='Đã tháo cầu muối';
+                $('#ph').textContent='Đèn tắt';
+                $('#status').textContent='Ngắt mạch';
+                $('#observation').innerHTML='<strong>Không có cầu muối:</strong> Mạch bị ngắt, điện tích tích tụ ở 2 cốc, dòng điện dừng lại, đèn tắt.';
+            }
         }
     }
     if(experiment!=='cell' && experiment!=='precipitation') updateChart();
@@ -344,9 +370,12 @@ $('#add-five').addEventListener('click',()=>{
         $('#observation').innerHTML='Đã làm mới giấy sắc ký. Nhấn "Chạy sắc ký" để thực hiện lại.';
     } else if(experiment==='cell'){
         const cellStage=$('#cell-stage');
-        if(cellStage) cellStage.classList.remove('running');
-        $('#status').textContent='Sẵn sàng';
-        $('#observation').innerHTML='Đã đặt lại trạng thái pin.';
+        if(cellStage){
+            cellStage.classList.toggle('running');
+            const isRunning=cellStage.classList.contains('running');
+            $('#status').textContent=isRunning?'Pin hoạt động':'Tạm dừng';
+            $('#observation').innerHTML=isRunning?'Pin đang chạy mô phỏng chuyển động.':'Pin đã tạm dừng.';
+        }
     }
     else add(1);
 });
@@ -357,8 +386,15 @@ $('#reset').addEventListener('click',()=>{
         renderSeparation();
     } else if(experiment==='cell'){
         const cellStage=$('#cell-stage');
-        if(cellStage) cellStage.classList.remove('running');
-        $('#status').textContent='Sẵn sàng';
+        const bridge=$('#salt-bridge');
+        if(cellStage && bridge){
+            bridge.classList.remove('removed');
+            cellStage.classList.add('running');
+            $('#volume').textContent='Đã lắp cầu muối';
+            $('#ph').textContent='Đèn sáng';
+            $('#status').textContent='Pin hoạt động';
+            $('#observation').innerHTML='Đã đặt lại trạng thái pin ban đầu.';
+        }
     } else if(experiment==='precipitation'){
         const jar=$('#chromato-jar');
         if(jar) jar.classList.remove('running');
@@ -502,31 +538,42 @@ function advanceSeparationStep(){
     renderSeparation();
 }
 
-// Pin điện hóa (Mục 03)
+// Pin điện hóa (Mục 03) chuẩn chỉnh có cầu muối và hoạt ảnh dòng điện
 function renderCell(){
     const scene=$('#scene');
     let cellStage=$('#cell-stage');
     if(!cellStage){
         cellStage=document.createElement('div');
         cellStage.id='cell-stage';
-        cellStage.className='cell-stage';
+        cellStage.className='cell-stage running';
         cellStage.innerHTML=`
-            <div class="cell-wire"><div class="electron-dot"></div></div>
-            <div class="half-cell">
-                <div class="half-liquid zinc-solution"></div>
-                <div class="electrode zinc-electrode"></div>
-                <small style="position:absolute;bottom:5px;color:#d6f2fa;font-size:10px;z-index:4">Anode (-) Zn</small>
-            </div>
-            <div class="salt-bridge"><div class="salt-bridge-label">Cầu muối (KCl)</div></div>
-            <div class="half-cell">
-                <div class="half-liquid copper-solution"></div>
-                <div class="electrode copper-electrode"></div>
-                <small style="position:absolute;bottom:5px;color:#d6f2fa;font-size:10px;z-index:4">Cathode (+) Cu</small>
+            <div class="cell-container">
+                <div class="cell-wire">
+                    <div class="light-bulb" title="Đèn báo sáng">💡</div>
+                    <div class="electron-particle" style="top:12px;"></div>
+                </div>
+                <div class="salt-bridge" id="salt-bridge">
+                    <div class="salt-bridge-label">Cầu muối (KCl)</div>
+                    <div class="ion-particle ion-k" style="top:25px;left:40px;">K⁺</div>
+                    <div class="ion-particle ion-cl" style="top:35px;right:40px;">Cl⁻</div>
+                </div>
+                <div class="half-cell">
+                    <div class="half-liquid zinc-solution"></div>
+                    <div class="electrode zinc-electrode"></div>
+                    <small style="position:absolute;bottom:4px;color:#d6f2fa;font-size:9px;z-index:4">Zn (-) Anode</small>
+                </div>
+                <div class="half-cell">
+                    <div class="half-liquid copper-solution"></div>
+                    <div class="electrode copper-electrode"></div>
+                    <small style="position:absolute;bottom:4px;color:#d6f2fa;font-size:9px;z-index:4">Cu (+) Cathode</small>
+                </div>
             </div>
         `;
         scene.appendChild(cellStage);
     }
     cellStage.classList.add('active');
+    $('#add-one').textContent='🔌 Tháo / Lắp cầu muối';
+    $('#add-five').textContent='⏸ Tạm dừng / Chạy';
 }
 
 chart();
