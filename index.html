@@ -93,7 +93,7 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 .chromato-jar.running .band-chlorophyll-b{bottom:35px;height:16px;opacity:0.9}
 .chromato-jar.running .chromato-spot{opacity:0}
 
-/* CSS Pin điện hóa mục 3 (Có tương tác chạy hoạt ảnh điện tử và dòng ion) */
+/* CSS Pin điện hóa mục 3 (Giống mẫu pin-zn-cu-cau-muoi) */
 .cell-stage{display:none;position:relative;min-height:280px;width:100%;align-items:center;justify-content:center;gap:15px;padding:20px}
 .cell-stage.active{display:flex}
 .half-cell{position:relative;width:110px;height:180px;border:2px solid #a6d8e8;border-top:none;border-radius:0 0 20px 20px;background:rgba(200,241,255,0.08);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
@@ -151,10 +151,15 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 <div class="bottom-grid"><div class="panel steps"><h3 style="margin:0 0 8px;font-size:14px">🧭 Các bước thực hiện</h3><div class="step"><span class="num">1</span><span>Cho 25 mL HCl 0,1 M vào bình tam giác.</span></div><div class="step"><span class="num">2</span><span>Thêm vài giọt phenolphthalein làm chất chỉ thị.</span></div><div class="step"><span class="num">3</span><span>Thêm NaOH 0,1 M từng lượng nhỏ và theo dõi pH.</span></div><div class="step"><span class="num">4</span><span>Ghi nhận vùng chuyển màu và thể tích gần điểm tương đương.</span></div></div>
 <div class="panel steps"><h3 style="margin:0 0 8px;font-size:14px">🔎 Nhận biết phản ứng</h3><div class="mini-cards"><div class="mini"><b>Phản ứng</b><span>Trung hòa axit – bazơ, tạo muối và nước.</span></div><div class="mini"><b>Dấu hiệu</b><span>Chỉ thị đổi màu trong một khoảng pH nhất định.</span></div><div class="mini"><b>Điểm tương đương</b><span>Số mol H⁺ phản ứng vừa đủ với OH⁻ theo tỉ lệ.</span></div><div class="mini"><b>Lưu ý</b><span>Màu hồng bền thường xuất hiện khi bazơ hơi dư.</span></div></div></div></div>
 </section>
-<section class="view" id="view-knowledge"><div class="intro"><div><h2>Góc kiến thức</h2><p>Tóm tắt khái niệm quan trọng trong thí nghiệm.</p></div></div><div class="panel"><div class="panel-head"><h3>📘 Chuẩn độ axit – bazơ</h3></div><div class="result-body"><h4 class="section-title">1. Phản ứng trung hòa</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">Axit phản ứng với bazơ tạo thành muối và nước. Với HCl và NaOH, phương trình ion rút gọn là <b style="color:#72e1d2">H⁺ + OH⁻ → H₂O</b>.</p><div class="equation">HCl + NaOH → NaCl + H₂O</div><h4 class="section-title">2. Điểm tương đương</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">Điểm tương đương là thời điểm lượng chất chuẩn đã thêm vừa đủ phản ứng theo phương trình. Với 25,0 mL HCl 0,100 M và NaOH 0,100 M, thể tích NaOH tại điểm tương đương là 25,0 mL.</p><h4 class="section-title">3. Chất chỉ thị phenolphthalein</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">Phenolphthalein không màu trong môi trường axit và gần trung tính; chuyển hồng trong môi trường bazơ, với khoảng chuyển màu xấp xỉ pH 8,2–10. Vì vậy màu hồng nhạt bền thường được dùng làm dấu hiệu kết thúc chuẩn độ này.</p><h4 class="section-title">4. Công thức cần nhớ</h4><div class="notice">Tại điểm tương đương của phản ứng HCl + NaOH theo tỉ lệ 1:1: <b>n(HCl) = n(NaOH)</b>, do đó <b>CₐVₐ = CᵦVᵦ</b>.</div></div></div></section>
-<section class="view" id="view-challenge"><div class="intro"><div><h2>Thử thách kiến thức</h2><p>Chọn đáp án rồi kiểm tra để nhận phản hồi.</p></div><div class="pill">5 câu hỏi nhanh</div></div><div class="panel"><div class="panel-head"><h3>🧠 Kiểm tra nhanh</h3><span class="sub" id="quiz-count">Câu 1 / 5</span></div><div class="quiz" id="quiz-area"><p id="quiz-question" style="font-size:15px;color:#e4f6fa">Ở 25 °C, 25 mL HCl 0,1 M được chuẩn độ bằng NaOH 0,1 M. Thể tích NaOH tại điểm tương đương là bao nhiêu?</p><div class="answers" id="quiz-answers"></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><button class="btn primary" id="check-answer">Kiểm tra đáp án</button><button class="btn" id="next-question">Câu tiếp theo →</button></div><div id="quiz-feedback" class="feedback" aria-live="polite"></div></div></div></section>
-<section class="view" id="view-guide"><div class="intro"><div><h2>Hướng dẫn sử dụng</h2><p>Cách thao tác trong phòng thí nghiệm ảo.</p></div></div><div class="panel"><div class="result-body"><div class="step"><span class="num">1</span><span>Chọn một trong các thí nghiệm ở thanh lựa chọn phía trên.</span></div><div class="step"><span class="num">2</span><span>Nhấn nút thêm dung dịch để thay đổi trạng thái mô phỏng.</span></div><div class="step"><span class="num">3</span><span>Đọc hiện tượng, phương trình và phần giải thích ở cột kết quả.</span></div><div class="step"><span class="num">4</span><span>Thử mục “Thử thách” để kiểm tra kiến thức sau khi quan sát.</span></div><div class="notice">Đây là mô hình giáo dục giản lược. Không sử dụng trang web thay cho quy trình an toàn hoặc số liệu của thí nghiệm thật.</div></div></div></section>
-<section class="view" id="view-about"><div class="intro"><div><h2>Về mô phỏng</h2><p>Một mẫu website có thể phát triển thêm cho dự án học tập.</p></div></div><div class="panel"><div class="result-body"><h3 style="margin-top:0">Phòng thí nghiệm Hóa học tương tác</h3><p style="color:#b7d6e1;line-height:1.7;font-size:13px">Website minh họa cách kết hợp hoạt ảnh, số liệu, phương trình và câu hỏi trắc nghiệm. Các giá trị chuẩn độ được tính từ nồng độ và thể tích đã đặt; một số hình ảnh dụng cụ chỉ mang tính biểu tượng.</p><div class="mini-cards"><div class="mini"><b>Trực quan</b><span>Quan sát dung dịch và dấu hiệu phản ứng.</span></div><div class="mini"><b>Tương tác</b><span>Điều khiển lượng dung dịch được thêm.</span></div><div class="mini"><b>Kiến thức</b><span>Liên hệ hiện tượng với phương trình.</span></div><div class="mini"><b>Ôn tập</b><span>Trả lời câu hỏi và xem phản hồi.</span></div></div></div></div></section>
+<section class="view" id="view-knowledge"><div class="intro"><div><h2>Góc kiến thức</h2><p>Tóm tắt khái niệm quan trọng trong tất cả các thí nghiệm.</p></div></div>
+<div class="panel" style="margin-bottom:14px;"><div class="panel-head"><h3>📘 01 · Chuẩn độ axit – bazơ</h3></div><div class="result-body"><h4 class="section-title">1. Phản ứng trung hòa</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">Axit phản ứng với bazơ tạo thành muối và nước. Phương trình ion rút gọn: <b style="color:#72e1d2">H⁺ + OH⁻ → H₂O</b>.</p><h4 class="section-title">2. Điểm tương đương & Công thức</h4><div class="notice">Tại điểm tương đương: <b>n(HCl) = n(NaOH)</b> ➔ <b>CₐVₐ = CᵦVᵦ</b>. Chất chỉ thị phenolphthalein đổi màu hồng ở khoảng pH 8,2–10.</div></div></div>
+<div class="panel" style="margin-bottom:14px;"><div class="panel-head"><h3>📘 02 · Sắc ký giấy tách sắc tố lá cây</h3></div><div class="result-body"><h4 class="section-title">1. Nguyên tắc sắc ký</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">Dựa vào độ hòa tan khác nhau của các sắc tố trong hệ dung môi hữu cơ và mức độ hấp phụ khác nhau trên giấy sắc ký.</p><h4 class="section-title">2. Các vạch sắc tố thu được (từ trên xuống)</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">• <b>Caroten</b> (màu cam): Di chuyển nhanh nhất, ít bám giấy.<br>• <b>Xantophin</b> (màu vàng): Sắc tố vàng hòa tan.<br>• <b>Clorophyl a</b> (xanh lá đậm): Sắc tố diệp lục chính.<br>• <b>Clorophyl b</b> (xanh lá nhạt): Sắc tố diệp lục phụ.</p></div></div>
+<div class="panel" style="margin-bottom:14px;"><div class="panel-head"><h3>📘 03 · Pin điện hóa (Galvani Zn - Cu)</h3></div><div class="result-body"><h4 class="section-title">1. Quá trình oxi hóa - khử</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">• <b>Cực âm (Anode - Zn):</b> Xảy ra sự oxi hóa: $Zn \rightarrow Zn^{2+} + 2e^{-}$ (Thanh kẽm tan dần).<br>• <b>Cực dương (Cathode - Cu):</b> Xảy ra sự khử: $Cu^{2+} + 2e^{-} \rightarrow Cu$ (Thanh đồng lớn lên).</p><h4 class="section-title">2. Vai trò cầu muối</h4><div class="notice">Cầu muối chứa chất điện ly (như KCl) giúp khép kín mạch điện và duy trì sự trung hòa điện tích giữa hai dung dịch cốc nửa tế bào.</div></div></div>
+<div class="panel"><div class="panel-head"><h3>📘 04 · Tách chất lỏng bằng phễu chiết</h3></div><div class="result-body"><h4 class="section-title">1. Nguyên tắc</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">Dùng để tách các chất lỏng không hòa tan vào nhau và có khối lượng riêng khác nhau (ví dụ: dầu ăn và nước).</p><h4 class="section-title">2. Hiện tượng & Thao tác</h4><div class="notice">Chất lỏng có khối lượng riêng lớn hơn (nước) nằm ở lớp dưới và được tháo trước qua khóa phễu chiết xuống cốc hứng; chất lỏng nhẹ hơn (dầu) ở trên được giữ lại trong phễu.</div></div></div>
+</section>
+<section class="view" id="view-challenge"><div class="intro"><div><h2>Thử thách kiến thức</h2><p>Chọn đáp án rồi kiểm tra để nhận phản hồi cho cả 4 thí nghiệm.</p></div></div><div class="panel"><div class="panel-head"><h3>🧠 Kiểm tra nhanh</h3><span class="sub" id="quiz-count">Câu 1 / 5</span></div><div class="quiz" id="quiz-area"><p id="quiz-question" style="font-size:15px;color:#e4f6fa">Ở 25 °C, 25 mL HCl 0,1 M được chuẩn độ bằng NaOH 0,1 M. Thể tích NaOH tại điểm tương đương là bao nhiêu?</p><div class="answers" id="quiz-answers"></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><button class="btn primary" id="check-answer">Kiểm tra đáp án</button><button class="btn" id="next-question">Câu tiếp theo →</button></div><div id="quiz-feedback" class="feedback" aria-live="polite"></div></div></div></section>
+<section class="view" id="view-guide"><div class="intro"><div><h2>Hướng dẫn sử dụng</h2><p>Cách thao tác trong phòng thí nghiệm ảo.</p></div></div><div class="panel"><div class="result-body"><div class="step"><span class="num">1</span><span>Chọn một trong 4 thí nghiệm ở thanh lựa chọn phía trên.</span></div><div class="step"><span class="num">2</span><span>Tương tác trực tiếp bằng cách bấm nút hoặc kéo thả mô phỏng.</span></div><div class="step"><span class="num">3</span><span>Đọc hiện tượng, phương trình và phần giải thích ở cột kết quả.</span></div><div class="step"><span class="num">4</span><span>Sử dụng mục “Thử thách” để kiểm tra kiến thức hóa học toàn diện.</span></div><div class="notice">Đây là mô hình giáo dục trực quan tương thích tuyệt vời trên điện thoại và máy tính.</div></div></div></section>
+<section class="view" id="view-about"><div class="intro"><div><h2>Về mô phỏng</h2><p>Phòng thí nghiệm Hóa học tương tác tương thích điện thoại.</p></div></div><div class="panel"><div class="result-body"><h3 style="margin-top:0">Phòng thí nghiệm Hóa học tương tác</h3><p style="color:#b7d6e1;line-height:1.7;font-size:13px">Website minh họa trực quan các thí nghiệm chuẩn độ, sắc ký lá cây, pin điện hóa và tách lớp chất lỏng với giao diện tối ưu hóa hoàn hảo cho thiết bị di động.</p></div></div></section>
 <div class="footer">HÓA HỌC TƯƠNG TÁC · Học bằng trải nghiệm – Hiểu bằng trực quan</div>
 </main></div></div>
 <script>
@@ -163,10 +168,10 @@ const $=s=>document.querySelector(s);const $$=s=>Array.from(document.querySelect
 let experiment='titration',volume=0,timer=null,quizIndex=0,quizChecked=false;
 const quiz=[
 {q:'Ở 25 °C, 25 mL HCl 0,1 M được chuẩn độ bằng NaOH 0,1 M. Thể tích NaOH tại điểm tương đương là bao nhiêu?',a:['12,5 mL','25,0 mL','50,0 mL','100 mL'],correct:1,why:'Hai dung dịch có cùng nồng độ và phản ứng theo tỉ lệ mol 1:1, nên cần 25,0 mL NaOH.'},
-{q:'Ion nào kết hợp với OH⁻ để tạo thành nước trong phản ứng trung hòa?',a:['Na⁺','Cl⁻','H⁺','O₂'],correct:2,why:'Phương trình ion rút gọn là H⁺ + OH⁻ → H₂O.'},
-{q:'Phenolphthalein thường chuyển sang màu hồng khi nào?',a:['Trong môi trường bazơ đủ mạnh theo khoảng chuyển màu','In mọi dung dịch không màu','Chỉ khi có kết tủa','Khi dung dịch luôn ở pH = 7'],correct:0,why:'Phenolphthalein chuyển hồng trong khoảng pH bazơ, xấp xỉ 8,2–10.'},
-{q:'Với chuẩn độ HCl bằng NaOH, trước điểm tương đương dung dịch còn dư chất nào?',a:['NaOH','HCl','NaCl rắn','O₂'],correct:1,why:'Trước điểm tương đương, số mol OH⁻ thêm vào chưa đủ để trung hòa hết H⁺ ban đầu.'},
-{q:'Phương trình ion rút gọn của phản ứng trung hòa axit mạnh – bazơ mạnh là gì?',a:['Na⁺ + Cl⁻ → NaCl','H⁺ + OH⁻ → H₂O','H₂O → H₂ + O₂','HCl → H₂ + Cl₂'],correct:1,why:'Ion H⁺ và OH⁻ tạo thành nước; các ion còn lại là ion khán giả trong trường hợp này.'}
+{q:'Trong thí nghiệm sắc ký lá cây, sắc tố nào di chuyển nhanh nhất và ở vị trí cao nhất trên giấy?',a:['Clorophyl a','Xantophin','Caroten','Clorophyl b'],correct:2,why:'Caroten ít bị bám giữ trên giấy và hòa tan tốt trong dung môi nên di chuyển nhanh và xa nhất.'},
+{q:'Trong pin Galvani (Zn - Cu), quá trình nào xảy ra ở thanh kẽm (Anode)?',a:['Ion Cu²⁺ nhận electron thành Cu','Thanh kẽm bị oxi hóa, tan dần thành ion Zn²⁺','Không có hiện tượng gì','Thanh kẽm to lên do bám đồng'],correct:1,why:'Tại anode kẽm, Zn bị oxi hóa thành Zn²⁺ và giải phóng 2 electron đi ra mạch ngoài.'},
+{q:'Khi dùng phễu chiết để tách hỗn hợp dầu ăn và nước, chất lỏng nào nằm ở lớp dưới?',a:['Dầu ăn','Nước','Cả hai hòa tan đều nhau','Tùy thuộc vào nhiệt độ'],correct:1,why:'Nước có khối lượng riêng lớn hơn dầu ăn nên lắng xuống lớp phía dưới phễu chiết.'},
+{q:'Vai trò chính của cầu muối trong pin điện hóa là gì?',a:['Cung cấp thêm điện tích dương','Khép kín mạch điện và duy trì trung hòa điện tích giữa 2 dung dịch','Làm tăng nhiệt độ của pin','Làm chất xúc tác phản ứng'],correct:1,why:'Cầu muối giúp ion di chuyển giữa hai cốc để cân bằng điện tích, giúp pin hoạt động liên tục.'}
 ];
 function phValue(v){const ca=.1,va=25,cb=.1,total=va+v;const acid=ca*va,base=cb*v;if(Math.abs(acid-base)<1e-10)return 7;if(acid>base)return -Math.log10((acid-base)/total);return 14+Math.log10((base-acid)/total);}
 function fmt(n,d=1){return n.toFixed(d).replace('.',',')}
@@ -176,7 +181,6 @@ function updateTitration(){
     const p=phValue(volume);
     $('#volume').textContent=fmt(volume)+' mL';
     $('#ph').textContent=p.toFixed(2);
-    
     $('#buret-liquid').style.height=Math.max(10,65-(volume/50)*50)+'%';
     let flaskHeight=45+(volume/50)*30;
     $('#flask-liquid').style.height=flaskHeight+'%';
@@ -195,8 +199,8 @@ function updateTitration(){
         $('#observation').innerHTML='Dung dịch vẫn không màu; axit còn dư. pH tăng dần khi thêm NaOH.';
         $('#explanation').textContent='OH⁻ đã thêm vào phản ứng với một phần H⁺, nhưng lượng axit ban đầu vẫn còn dư.';
     }else if(volume<=25){
-        $('#observation').innerHTML='Dung dịch đang tiến gần điểm tương đương. Hãy thêm lượng nhỏ để quan sát.';
-        $('#explanation').textContent='Gần điểm tương đương, pH thay đổi rất nhanh.';
+        $('#observation').innerHTML='Dung dịch đang tiến gần điểm tương đương. pH thay đổi rất nhanh.';
+        $('#explanation').textContent='Gần điểm tương đương, một lượng nhỏ dung dịch có thể làm pH thay đổi mạnh.';
     }else{
         $('#observation').innerHTML='Dung dịch chuyển hồng do phenolphthalein trong môi trường bazơ dư.';
         $('#explanation').textContent='Sau điểm tương đương, dư ion OH⁻ làm dung dịch có tính kiềm.';
@@ -287,6 +291,9 @@ function setExp(key){
         $('#status').textContent='Chờ chạy';
         $('#curve').setAttribute('d','');
         $('#chart-point').style.display='none';
+    }else if(key==='separation'){
+        sepStep=0;
+        renderSeparation();
     }
 }
 function add(v){
@@ -318,7 +325,7 @@ function stopAuto(){if(timer){clearInterval(timer);timer=null;}if($('#auto-run')
 function autoRun(){if(timer){stopAuto();return;}if(experiment!=='titration')return;$('#auto-run').textContent='Ⅱ Tạm dừng';timer=setInterval(()=>{if(volume>=35){stopAuto();return;}add(1);},Math.max(220,900-Number($('#speed').value)*130));}
 
 $('#add-one').addEventListener('click',()=>{
-    if(experiment==='separation') advanceSeparation(false);
+    if(experiment==='separation') advanceSeparationStep();
     else if(experiment==='titration') add(1);
     else if(experiment==='precipitation') add(1);
     else if(experiment==='cell') add(1);
@@ -375,6 +382,31 @@ dropper.addEventListener('pointerup',(e)=>{if(!isDragging)return;isDragging=fals
 
 function renderQuiz(){const q=quiz[quizIndex];$('#quiz-count').textContent='Câu '+(quizIndex+1)+' / '+quiz.length;$('#quiz-question').textContent=q.q;$('#quiz-answers').innerHTML='';q.a.forEach((a,i)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='radio';input.name='quiz-answer';input.value=i;const span=document.createElement('span');span.textContent=a;label.append(input,span);$('#quiz-answers').append(label);});$('#quiz-feedback').textContent='';$('#quiz-feedback').className='feedback';quizChecked=false;$('#check-answer').disabled=false;}
 $('#check-answer').addEventListener('click',()=>{if(quizChecked)return;const picked=$('input[name="quiz-answer"]:checked');if(!picked){$('#quiz-feedback').textContent='Hãy chọn một đáp án trước nhé.';$('#quiz-feedback').className='feedback bad';return;}quizChecked=true;const q=quiz[quizIndex];const good=Number(picked.value)===q.correct;$('#quiz-feedback').textContent=(good?'Chính xác! ':'Chưa đúng. ')+q.why;$('#quiz-feedback').className='feedback '+(good?'good':'bad');});$('#next-question').addEventListener('click',()=>{quizIndex=(quizIndex+1)%quiz.length;renderQuiz();});
+
+// Sắc ký giấy (Mục 02)
+function renderChromato(){
+    const scene=$('#scene');
+    let chromatoStage=$('#chromato-stage');
+    if(!chromatoStage){
+        chromatoStage=document.createElement('div');
+        chromatoStage.id='chromato-stage';
+        chromatoStage.className='chromato-stage';
+        chromatoStage.innerHTML=`
+            <div class="chromato-jar" id="chromato-jar">
+                <div class="chromato-solvent"></div>
+                <div class="chromato-paper">
+                    <div class="chromato-spot"></div>
+                    <div class="pigment-band band-caroten" title="Caroten (Cam)"></div>
+                    <div class="pigment-band band-xantophin" title="Xantophin (Vàng)"></div>
+                    <div class="pigment-band band-chlorophyll-a" title="Clorophyl a (Xanh đậm)"></div>
+                    <div class="pigment-band band-chlorophyll-b" title="Clorophyl b (Xanh nhạt)"></div>
+                </div>
+            </div>
+        `;
+        scene.appendChild(chromatoStage);
+    }
+    chromatoStage.classList.add('active');
+}
 
 // Thí nghiệm tách lớp (Mục 04): 2 bình riêng biệt đổ vào phễu chiết
 let sepStep=0; // 0: 2 bình riêng (Nước & Dầu), 1: Đã đổ vào phễu, 2: Phân lớp, 3: Đã tháo nước
@@ -470,7 +502,7 @@ function advanceSeparationStep(){
     renderSeparation();
 }
 
-// Giao diện Pin điện hóa với Cầu muối (Mục 03)
+// Pin điện hóa (Mục 03)
 function renderCell(){
     const scene=$('#scene');
     let cellStage=$('#cell-stage');
