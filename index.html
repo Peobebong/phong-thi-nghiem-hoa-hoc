@@ -38,41 +38,34 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 .right-stack{display:flex;flex-direction:column;gap:14px}.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px}.stat{background:#0e364c;border:1px solid #235a70;border-radius:13px;padding:12px}.stat label{display:block;color:#8db7c8;font-size:11px;margin-bottom:7px}.stat strong{font-size:22px;color:#72e1d2}.stat small{display:block;color:#a5c9d7;margin-top:4px;font-size:10px}.result-body{padding:13px 15px}.notice{padding:12px;border-radius:12px;background:#123f54;color:#cdeaf2;font-size:12px;line-height:1.6}.notice strong{color:#ffffff}.equation{text-align:center;padding:13px 8px;border-radius:12px;background:#083747;border:1px solid #1b6370;font-size:17px;font-weight:800;letter-spacing:.3px;color:#8cf0df;margin:12px 0}.section-title{font-size:13px;margin:0 0 9px;color:#d9f4fa}.chart-wrap{padding:12px 14px 15px}.chart-wrap svg{width:100%;height:auto;display:block}.quiz{padding:14px 15px}.quiz p{font-size:12px;line-height:1.5;color:#c5e1eb}.answers{display:grid;gap:7px}.answer{display:flex;align-items:flex-start;gap:8px;border:1px solid #24586d;border-radius:10px;padding:9px;font-size:12px;color:#c8e1e9;cursor:pointer}.answer input{accent-color:#39d5c1;margin-top:2px}.feedback{font-size:12px;margin-top:10px;line-height:1.5}.feedback.good{color:#70e2b7}.feedback.bad{color:#ffd18a}.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.steps{padding:14px 16px}.step{display:flex;gap:10px;margin:11px 0;color:#a9cbd8;font-size:12px;line-height:1.5}.num{flex:0 0 23px;height:23px;display:grid;place-items:center;background:#0c756f;border-radius:50%;font-weight:800;color:white}.mini-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.mini{padding:12px;border:1px solid #24566b;border-radius:12px;background:#0b3045}.mini b{font-size:12px;display:block;margin-bottom:6px}.mini span{font-size:11px;color:#9cc4d4;line-height:1.5}.view{display:none}.view.active{display:block}.footer{padding:20px 10px 6px;text-align:center;font-size:11px;color:#7eacbf}.hidden{display:none!important}
 @media(max-width:1000px){.layout{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.nav-btn{justify-content:center;flex-direction:column;text-align:center;padding:10px 5px;font-size:11px}.side-note{display:none}.grid{grid-template-columns:minmax(0,1.15fr) minmax(250px,.85fr)}}
 
-/* CSS Phễu chiết mục 4 */
+/* CSS Phễu chiết mục 4 (Hỗn hợp đã sẵn trong phễu, lọc từng lớp) */
 .sep-stage{display:none;position:relative;min-height:280px;width:100%;align-items:center;justify-content:center;gap:20px;padding:20px}.sep-stage.active{display:flex}
-.sep-initial-view{display:flex;align-items:center;justify-content:center;gap:35px;width:100%}
-.sep-vessel-single{position:relative;width:95px;height:140px;border:2px solid #b9e7f4;border-radius:15px;background:rgba(216,246,255,0.08);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;overflow:hidden}
-.sep-single-liquid{position:absolute;bottom:0;left:0;right:0;height:65%}
-.liquid-water{background:linear-gradient(90deg,#4aa9e888,#b7e9ffaa,#4196d088)}
-.liquid-oil{background:linear-gradient(90deg,#f4d35eaa,#ffe89acc,#d6ae3caa)}
-
-.sep-funnel-view{display:none;align-items:center;justify-content:center;gap:28px;width:100%}
-.sep-funnel-view.active{display:flex}
+.sep-funnel-view{display:flex;align-items:center;justify-content:center;gap:35px;width:100%}
 .sep-vessel{position:relative;width:150px;height:210px;display:flex;align-items:center;justify-content:center}
 .sep-glass{position:relative;width:108px;height:155px;border:3px solid #b9e7f4;border-radius:48% 48% 45% 45% / 18% 18% 60% 60%;background:#d8f6ff12;overflow:hidden}
 .sep-layer{position:absolute;left:2px;right:2px;transition:height .8s ease,bottom .8s ease}
-.sep-oil{bottom:50%;height:0;background:linear-gradient(90deg,#f4d35eaa,#ffe89acc,#d6ae3caa)}
-.sep-water{bottom:2px;height:0;background:linear-gradient(90deg,#4aa9e899,#b7e9ffbb,#4196d0aa)}
-.sep-glass.mixed .sep-oil{height:38%;bottom:38%}
-.sep-glass.mixed .sep-water{height:38%;bottom:2px}
-.sep-glass.layered .sep-oil{height:38%;bottom:45%}
-.sep-glass.layered .sep-water{height:40%;bottom:2px}
-.sep-glass.draining .sep-oil{height:38%;bottom:45%}
-.sep-glass.draining .sep-water{height:0%;bottom:2px}
+.sep-oil{bottom:45%;height:38%;background:linear-gradient(90deg,#f4d35eaa,#ffe89acc,#d6ae3caa)}
+.sep-water{bottom:2px;height:40%;background:linear-gradient(90deg,#4aa9e899,#b7e9ffbb,#4196d0aa)}
+.sep-glass.draining-water .sep-water{height:0%;bottom:2px}
+.sep-glass.draining-oil .sep-oil{height:0%;bottom:45%}
 
 .sep-neck{position:absolute;bottom:12px;width:18px;height:28px;border:2px solid #b9e7f4;background:#c6f2ff20}
 .sep-stopcock{position:absolute;bottom:0;width:44px;height:9px;border-radius:5px;background:#b9dce8}
 .sep-stopcock:after{content:"";position:absolute;left:17px;top:-7px;width:8px;height:23px;border-radius:4px;background:#ef8b80;transition:transform 0.3s}
-.sep-glass.draining ~ .sep-stopcock:after,.sep-funnel-view.draining-active .sep-stopcock:after{transform:rotate(90deg);background:#52e0c4}
+.sep-funnel-view.open-valve .sep-stopcock:after{transform:rotate(90deg);background:#52e0c4}
 
 .sep-stream{position:absolute;bottom:-18px;left:70px;width:4px;height:0px;background:linear-gradient(to bottom,#4aa9e8,#b7e9ff);opacity:0;transition:height 0.3s}
 .sep-stream.active{height:45px;opacity:0.9;animation:streamFlow 0.4s linear infinite}
 @keyframes streamFlow{0%{background-position:0 0}100%{background-position:0 10px}}
 
-.sep-cup{align-self:flex-end;width:92px;height:62px;border:2px solid #9acfe1;border-top:0;border-radius:0 0 16px 16px;background:linear-gradient(to top,#55b9ed88 4%,transparent 4%);position:relative;margin-bottom:24px;overflow:hidden}
-.sep-cup-liquid{position:absolute;bottom:0;left:0;right:0;height:0%;background:linear-gradient(90deg,#4aa9e8aa,#b7e9ffcc,#4196d0aa);transition:height 0.8s ease}
-.sep-cup.filled .sep-cup-liquid{height:55%}
-.sep-label{position:absolute;bottom:-25px;width:150px;text-align:center;font-size:12px;color:#d6f2fa}
+.sep-cups-container{display:flex;flex-direction:column;gap:12px;justify-content:center}
+.sep-cup{width:95px;height:65px;border:2px solid #9acfe1;border-top:0;border-radius:0 0 16px 16px;background:linear-gradient(to top,#55b9ed88 4%,transparent 4%);position:relative;overflow:hidden}
+.sep-cup-liquid{position:absolute;bottom:0;left:0;right:0;height:0%;transition:height 0.8s ease}
+.sep-cup-liquid.water-liq{background:linear-gradient(90deg,#4aa9e8aa,#b7e9ffcc,#4196d0aa)}
+.sep-cup-liquid.oil-liq{background:linear-gradient(90deg,#f4d35eaa,#ffe89acc,#d6ae3caa)}
+.sep-cup.filled-water .water-liq{height:60%}
+.sep-cup.filled-oil .oil-liq{height:60%}
+.sep-label{font-size:11px;color:#d6f2fa;text-align:center;margin-top:3px}
 
 /* CSS Sắc ký lá cây mục 2 */
 .chromato-stage{display:none;position:relative;min-height:280px;width:100%;align-items:center;justify-content:center;gap:20px;padding:20px}
@@ -93,7 +86,7 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 .chromato-jar.running .band-chlorophyll-b{bottom:35px;height:16px;opacity:0.9}
 .chromato-jar.running .chromato-spot{opacity:0}
 
-/* CSS Pin điện hóa mục 3 (Cầu muối chữ U úp ngược hoàn chỉnh) */
+/* CSS Pin điện hóa mục 3 */
 .cell-stage{display:none;position:relative;min-height:310px;width:100%;align-items:center;justify-content:center;gap:10px;padding:15px}
 .cell-stage.active{display:flex}
 .cell-container{position:relative;width:100%;max-width:440px;height:240px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,42,62,0.6);border:1px solid #1d536a;border-radius:14px;padding:15px}
@@ -170,7 +163,7 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 <h4 class="section-title">1. Phản ứng trung hòa</h4>
 <p style="color:#b7d6e1;line-height:1.7;font-size:13px">Axit phản ứng với bazơ tạo thành muối và nước. Phương trình ion rút gọn: <b style="color:#72e1d2">H⁺ + OH⁻ → H₂O</b>.</p>
 <h4 class="section-title">2. Điểm tương đương & Công thức</h4>
-<div class="notice">Tại điểm tương đương: <b>n(HCl) = n(NaOH)</b> ➔ <b>CₐVₐ = CᵦVᵦ</b>. Chất chỉ thị phenolphthalein đổi màu hồng ở khoảng pH 8,2–10[span_8](start_span)[span_8](end_span).</div>
+<div class="notice">Tại điểm tương đương: <b>n(HCl) = n(NaOH)</b> ➔ <b>CₐVₐ = CᵦVᵦ</b>. Chất chỉ thị phenolphthalein đổi màu hồng ở khoảng pH 8,2–10[span_2](start_span)[span_2](end_span).</div>
 </div>
 </div>
 </div>
@@ -239,9 +232,11 @@ function updateKnowledgeCard(key){
     if(!container)return;
     if(key==='titration'){
         container.innerHTML=`
-            <div class="panel"><div class="panel-head"><h3>📘 01 / Điện cực kẽm & Cân bằng</h3></div><div class="result-body">
-            <h4 class="section-title">Zn → Zn²⁺ + 2e⁻</h4>
-            <p style="color:#b7d6e1;font-size:13px;line-height:1.6">Kẽm bị oxi hóa, tan dần. Electron đi từ điện cực Zn qua mạch ngoài đến điện cực Cu.</p>
+            <div class="panel"><div class="panel-head"><h3>📘 Kiến thức trọng tâm: Chuẩn độ axit – bazơ</h3></div><div class="result-body">
+            <h4 class="section-title">1. Phản ứng trung hòa</h4>
+            <p style="color:#b7d6e1;line-height:1.7;font-size:13px">Axit phản ứng với bazơ tạo thành muối và nước. Phương trình ion rút gọn: <b style="color:#72e1d2">H⁺ + OH⁻ → H₂O</b>.</p>
+            <h4 class="section-title">2. Điểm tương đương & Công thức</h4>
+            <div class="notice">Tại điểm tương đương: <b>n(HCl) = n(NaOH)</b> ➔ <b>CₐVₐ = CᵦVᵦ</b>. Chất chỉ thị phenolphthalein đổi màu hồng ở khoảng pH 8,2–10[span_3](start_span)[span_3](end_span).</div>
             </div></div>
         `;
     }else if(key==='precipitation'){
@@ -254,29 +249,29 @@ function updateKnowledgeCard(key){
               <span>Diệp lục a</span><span>Lục làm</span><span>0,65</span>
               <span>Diệp lục b</span><span>Lục vàng</span><span>0,45</span>
             </div>
-            <div class="notice">Rᶠ = quãng đường sắc tố / quãng đường dung môi[span_9](start_span)[span_9](end_span).</div>
+            <div class="notice">Rᶠ = quãng đường sắc tố / quãng đường dung môi[span_4](start_span)[span_4](end_span).</div>
             </div></div>
         `;
     }else if(key==='cell'){
         container.innerHTML=`
             <div class="panel"><div class="panel-head"><h3>📘 01 / Điện cực kẽm</h3></div><div class="result-body">
             <h4 class="section-title">Zn → Zn²⁺ + 2e⁻</h4>
-            <p style="color:#b7d6e1;font-size:13px">Kẽm bị oxi hóa, tan dần. Electron đi từ điện cực Zn qua mạch ngoài đến điện cực Cu[span_10](start_span)[span_10](end_span).</p>
+            <p style="color:#b7d6e1;font-size:13px">Kẽm bị oxi hóa, tan dần. Electron đi từ điện cực Zn qua mạch ngoài đến điện cực Cu[span_5](start_span)[span_5](end_span).</p>
             </div></div>
             <div class="panel"><div class="panel-head"><h3>📘 02 / Cầu muối</h3></div><div class="result-body">
             <h4 class="section-title">Cl⁻ ← &nbsp;&nbsp; → K⁺</h4>
-            <p style="color:#b7d6e1;font-size:13px">Cl⁻ đi về ngăn Zn, K⁺ đi về ngăn Cu, giúp duy trì trung hòa điện trong hai dung dịch[span_11](start_span)[span_11](end_span).</p>
+            <p style="color:#b7d6e1;font-size:13px">Cl⁻ đi về ngăn Zn, K⁺ đi về ngăn Cu, giúp duy trì trung hòa điện trong hai dung dịch[span_6](start_span)[span_6](end_span).</p>
             </div></div>
             <div class="panel"><div class="panel-head"><h3>📘 03 / Điện cực đồng</h3></div><div class="result-body">
             <h4 class="section-title">Cu²⁺ + 2e⁻ → Cu</h4>
-            <p style="color:#b7d6e1;font-size:13px">Ion Cu²⁺ bị khử thành đồng bám lên điện cực. Phản ứng tổng: Zn + Cu²⁺ → Zn²⁺ + Cu[span_12](start_span)[span_12](end_span).</p>
+            <p style="color:#b7d6e1;font-size:13px">Ion Cu²⁺ bị khử thành đồng bám lên điện cực. Phản ứng tổng: Zn + Cu²⁺ → Zn²⁺ + Cu[span_7](start_span)[span_7](end_span).</p>
             </div></div>
         `;
     }else if(key==='separation'){
         container.innerHTML=`
             <div class="panel"><div class="panel-head"><h3>📘 04 / Khi nào dùng phương pháp chiết?</h3></div><div class="result-body">
-            <p style="color:#b7d6e1;font-size:13px;line-height:1.6">Dùng phễu chiết để tách các chất lỏng không trộn lẫn, đã tạo thành các lớp có khối lượng riêng khác nhau[span_13](start_span)[span_13](end_span).</p>
-            <div class="notice">Không thể tách ethanol và nước bằng phễu chiết vì chúng trộn lẫn vào nhau[span_14](start_span)[span_14](end_span).</div>
+            <p style="color:#b7d6e1;font-size:13px;line-height:1.6">Dùng phễu chiết để tách các chất lỏng không trộn lẫn, đã tạo thành các lớp có khối lượng riêng khác nhau[span_8](start_span)[span_8](end_span).</p>
+            <div class="notice">Không thể tách ethanol và nước bằng phễu chiết vì chúng trộn lẫn vào nhau[span_9](start_span)[span_9](end_span).</div>
             </div></div>
         `;
     }
@@ -340,7 +335,7 @@ function setExp(key){
         $('#volume-note').textContent='Nhấn Chạy sắc ký';
         $('#ph-note').textContent='Caroten đến Clorophyl b';
         $('#equation').textContent='Sắc tố tan khác nhau trong dung môi & bám khác nhau trên giấy';
-        $('#observation').innerHTML='<strong>Chuẩn bị:</strong> Chấm dịch chiết lá lên giấy sắc ký rồi nhúng vào ống nghiệm chứa dung môi[span_15](start_span)[span_15](end_span).';
+        $('#observation').innerHTML='<strong>Chuẩn bị:</strong> Chấm dịch chiết lá lên giấy sắc ký rồi nhúng vào ống nghiệm chứa dung môi[span_10](start_span)[span_10](end_span).';
         $('#explanation').textContent='Dựa vào độ hòa tan và hệ số phân bố, các sắc tố di chuyển với tốc độ khác nhau tạo thành các vạch riêng biệt.';
         $('#add-one').textContent='▶ Chạy sắc ký';
         $('#add-five').textContent='↺ Đặt lại giấy';
@@ -358,7 +353,7 @@ function setExp(key){
         $('#ph').textContent='Đèn sáng';
         $('#volume-note').textContent='Dòng điện khép kín';
         $('#ph-note').textContent='Ion trung hòa điện';
-        $('#equation').textContent='Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)[span_16](start_span)[span_16](end_span)';
+        $('#equation').textContent='Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)[span_11](start_span)[span_11](end_span)';
         $('#observation').innerHTML='<strong>Có cầu muối:</strong> Dòng electron được duy trì qua mạch ngoài, ion di chuyển qua cầu muối, bóng đèn sáng.';
         $('#explanation').textContent='Kẽm oxi hóa ở anode, ion đồng khử ở cathode. Cầu muối là cầu nối duy trì cân bằng điện tích.';
         $('#add-one').textContent='🔌 Tháo / Lắp cầu muối';
@@ -422,8 +417,8 @@ $('#add-one').addEventListener('click',()=>{
 });
 $('#add-five').addEventListener('click',()=>{
     if(experiment==='separation'){
-        if(sepStep<3) advanceSeparationStep();
-        else $('#status').textContent='Đã hoàn tất';
+        if(sepStep<2) advanceSeparationStep();
+        else $('#status').textContent='Đã hoàn tất tách';
     } else if(experiment==='titration') add(5);
     else if(experiment==='precipitation'){
         const jar=$('#chromato-jar');
@@ -507,8 +502,8 @@ function renderChromato(){
     chromatoStage.classList.add('active');
 }
 
-// Thí nghiệm tách lớp (Mục 04)
-let sepStep=0;
+// Thí nghiệm tách lớp (Mục 04): Hỗn hợp có sẵn trong phễu, lọc từng chất ra các lọ riêng biệt
+let sepStep=0; // 0: Đã phân lớp trong phễu, 1: Đã lọc nước xuống lọ 1, 2: Đã lọc dầu xuống lọ 2
 function renderSeparation(){
     const scene=$('#scene');
     let stage=$('#sep-stage');
@@ -522,86 +517,93 @@ function renderSeparation(){
     if(sceneInner) sceneInner.style.display='none';
     stage.classList.add('active');
 
-    let html='';
+    let glassClass='', streamClass='', waterCupClass='', oilCupClass='', valveOpenClass='';
     if(sepStep===0){
-        html=`
-            <div class="sep-initial-view">
-                <div style="text-align:center">
-                    <div class="sep-vessel-single"><div class="sep-single-liquid liquid-water"></div></div>
-                    <div style="font-size:12px;margin-top:6px;color:#d6f2fa">Bình chứa Nước</div>
-                </div>
-                <div style="text-align:center">
-                    <div class="sep-vessel-single"><div class="sep-single-liquid liquid-oil"></div></div>
-                    <div style="font-size:12px;margin-top:6px;color:#d6f2fa">Bình chứa Dầu</div>
-                </div>
-            </div>
-        `;
-        $('#add-one').textContent='＋ Rót chung vào phễu';
-        $('#add-five').textContent='⏩ Bỏ qua bước';
-        $('#status').textContent='Chờ rót dung dịch';
-        $('#scene-caption').textContent='Hai bình riêng biệt chứa nước và dầu';
-        $('#observation').innerHTML='<strong>Bước 1:</strong> Chuẩn bị hai bình riêng biệt (1 bình nước, 1 bình dầu). Nhấn <strong>“Rót chung vào phễu”</strong> để đổ vào phễu chiết.';
-    } else {
-        let glassClass='', streamClass='', cupClass='', drainingActive='';
-        if(sepStep===1) glassClass='mixed';
-        else if(sepStep===2) glassClass='layered';
-        else if(sepStep===3){ glassClass='draining'; streamClass='active'; cupClass='filled'; drainingActive='draining-active'; }
-
-        html=`
-            <div class="sep-funnel-view active ${drainingActive}">
-                <div class="sep-vessel">
-                    <div class="sep-glass ${glassClass}">
-                        <div class="sep-layer sep-oil"></div>
-                        <div class="sep-layer sep-water"></div>
-                    </div>
-                    <div class="sep-neck"></div>
-                    <div class="sep-stopcock"></div>
-                    <div class="sep-stream ${streamClass}" id="sep-stream"></div>
-                    <div class="sep-label">Phễu chiết</div>
-                </div>
-                <div class="sep-cup ${cupClass}" id="sep-cup">
-                    <div class="sep-cup-liquid" id="sep-cup-liquid"></div>
-                    <div class="sep-label">Cốc hứng nước</div>
-                </div>
-            </div>
-        `;
-        if(sepStep===1){
-            $('#add-one').textContent='⏳ Để yên phân lớp';
-            $('#status').textContent='Đang hỗn hợp';
-            $('#scene-caption').textContent='Hai chất lỏng được trộn chung trong phễu';
-            $('#observation').innerHTML='<strong>Bước 2:</strong> Hỗn hợp dầu và nước trong phễu chiết. Nhấn nút để chờ phân lớp.';
-        }else if(sepStep===2){
-            $('#add-one').textContent='🔓 Mở khóa tháo nước';
-            $('#status').textContent='Đã phân lớp';
-            $('#scene-caption').textContent='Chất lỏng phân thành 2 lớp rõ rệt';
-            $('#observation').innerHTML='<strong>Bước 3:</strong> Dầu nhẹ hơn nổi lên trên, nước nặng hơn lắng xuống dưới. Nhấn <strong>“Mở khóa tháo nước”</strong>.';
-        }else if(sepStep===3){
-            $('#add-one').textContent='✓ Hoàn tất tách';
-            $('#add-one').disabled=true;
-            $('#status').textContent='Đã tháo xong nước';
-            $('#scene-caption').textContent='Lớp nước đã chảy xuống cốc, lớp dầu ở lại phễu';
-            $('#observation').innerHTML='<strong>Hoàn thành:</strong> Nước đã chảy hết xuống cốc hứng, để lại lớp dầu tinh khiết bên trong phễu chiết.';
-        }
+        glassClass=''; streamClass=''; waterCupClass=''; oilCupClass=''; valveOpenClass='';
+    } else if(sepStep===1){
+        glassClass='draining-water'; streamClass='active'; waterCupClass='filled-water'; oilCupClass=''; valveOpenClass='open-valve';
+    } else if(sepStep===2){
+        glassClass='draining-water draining-oil'; streamClass='active'; waterCupClass='filled-water'; oilCupClass='filled-oil'; valveOpenClass='open-valve';
     }
+
+    let html=`
+        <div class="sep-funnel-view ${valveOpenClass}">
+            <div class="sep-vessel">
+                <div class="sep-glass ${glassClass}">
+                    <div class="sep-layer sep-oil"></div>
+                    <div class="sep-layer sep-water"></div>
+                </div>
+                <div class="sep-neck"></div>
+                <div class="sep-stopcock"></div>
+                <div class="sep-stream ${streamClass}" id="sep-stream"></div>
+                <div class="sep-label">Phễu chiết (Chứa sẵn hỗn hợp)</div>
+            </div>
+            <div class="sep-cups-container">
+                <div style="text-align:center">
+                    <div class="sep-cup ${waterCupClass}">
+                        <div class="sep-cup-liquid water-liq"></div>
+                    </div>
+                    <div class="sep-label">Lọ 1: Nước</div>
+                </div>
+                <div style="text-align:center">
+                    <div class="sep-cup ${oilCupClass}">
+                        <div class="sep-cup-liquid oil-liq"></div>
+                    </div>
+                    <div class="sep-label">Lọ 2: Dầu ăn</div>
+                </div>
+            </div>
+        </div>
+    `;
     stage.innerHTML=html;
+
     $('#scene-title').textContent='Tách dầu và nước bằng phễu chiết';
-    $('#scene-subtitle').textContent='Từ 2 bình riêng biệt đến phễu chiết';
+    $('#scene-subtitle').textContent='Hỗn hợp có sẵn trong phễu · Lọc từng chất';
     $('#stat-label-one').textContent='Trạng thái tách';
-    $('#stat-label-two').textContent='Lớp ở dưới';
-    $('#volume').textContent=['Chưa rót','Đã rót vào phễu','Đã phân lớp','Đã tháo lớp nước'][sepStep];
-    $('#ph').textContent='Nước';
-    $('#volume-note').textContent='Dầu nhẹ hơn nước';
-    $('#ph-note').textContent='Nước nằm dưới';
-    $('#equation').textContent='Dầu + nước → hai lớp riêng biệt';
+    $('#stat-label-two').textContent='Đã lọc';
+    
+    if(sepStep===0){
+        $('#volume').textContent='Sẵn sàng tách';
+        $('#ph').textContent='Chưa lọc';
+        $('#volume-note').textContent='Nước ở dưới, dầu ở trên';
+        $('#ph-note').textContent='Nhấn nút để tháo nước';
+        $('#observation').innerHTML='<strong>Trạng thái ban đầu:</strong> Hỗn hợp dầu và nước đã có sẵn trong phễu chiết và phân thành 2 lớp rõ rệt. Nhấn <strong>“Mở khóa tháo nước”</strong>.';
+        $('#add-one').textContent='🔓 Mở khóa tháo Nước xuống Lọ 1';
+        $('#add-five').textContent='⏩ Lọc luôn Dầu xuống Lọ 2';
+        $('#status').textContent='Đang phân lớp';
+        $('#scene-caption').textContent='Hỗn hợp có sẵn trong phễu chiết';
+    } else if(sepStep===1){
+        $('#volume').textContent='Đã lọc xong Nước';
+        $('#ph').textContent='Đã thu Lọ 1';
+        $('#volume-note').textContent='Nước nằm ở Lọ 1';
+        $('#ph-note').textContent='Chuẩn bị hứng Dọ 2';
+        $('#observation').innerHTML='<strong>Đã tháo xong lớp nước:</strong> Nước đã chảy hết xuống Lọ 1. Tiếp tục nhấn <strong>“Tháo Dầu xuống Lọ 2”</strong>.';
+        $('#add-one').textContent='🔓 Mở khóa tháo Dầu xuống Lọ 2';
+        $('#add-five').textContent='✓ Hoàn tất';
+        $('#status').textContent='Đã lọc xong Nước';
+        $('#scene-caption').textContent='Đã thu hồi lớp nước vào lọ riêng';
+    } else if(sepStep===2){
+        $('#volume').textContent='Hoàn tất tách 2 lọ';
+        $('#ph').textContent='Đã thu 2 Lọ';
+        $('#volume-note').textContent='Nước & Dầu riêng biệt';
+        $('#ph-note').textContent='Hoàn thành thí nghiệm';
+        $('#observation').innerHTML='<strong>Hoàn thành:</strong> Cả hai chất lỏng đã được lọc thành công vào 2 lọ riêng biệt (Lọ 1 chứa nước, Lọ 2 chứa dầu).';
+        $('#add-one').textContent='✓ Đã tách hoàn tất';
+        $('#add-one').disabled=true;
+        $('#add-five').disabled=true;
+        $('#status').textContent='Hoàn tất';
+        $('#scene-caption').textContent='Hai chất lỏng đã được tách vào 2 lọ riêng';
+    }
+    
+    $('#equation').textContent='Dầu + nước → Lọc thành 2 lọ riêng biệt';
     $('#curve').setAttribute('d','');
     $('#chart-point').style.display='none';
 }
 function advanceSeparationStep(){
-    if(sepStep<3) sepStep++;
+    if(sepStep<2) sepStep++;
     renderSeparation();
 }
 
-// Pin điện hóa (Mục 03) chuẩn chỉnh cầu muối chữ U úp ngược
+// Pin điện hóa (Mục 03)
 function renderCell(){
     const scene=$('#scene');
     let cellStage=$('#cell-stage');
