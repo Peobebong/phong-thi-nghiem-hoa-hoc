@@ -22,21 +22,32 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 .stand{position:relative;width:90px;min-width:90px;height:250px;display:flex;align-items:center;flex-direction:column;justify-content:flex-end}
 .buret{height:150px;width:25px;border:2px solid #a6d8e8;border-radius:5px 5px 9px 9px;background:linear-gradient(90deg,#d9f5ff65,#4ca8d777,#d9f5ff42);position:relative;overflow:visible}.buret:before{content:"";position:absolute;top:-12px;left:5px;width:11px;height:12px;border:2px solid #a6d8e8;border-bottom:0;border-radius:3px 3px 0 0}.buret-liquid{position:absolute;left:2px;right:2px;top:2px;height:65%;background:#249fe0b8;transition:height .3s}.tick{position:absolute;right:-9px;top:20px;height:95px;width:7px;border-top:1px solid #c7eaf5;border-bottom:1px solid #c7eaf5;background:repeating-linear-gradient(to bottom,transparent 0 13px,#d5f3ff 13px 14px)}.tap{width:35px;height:8px;background:#9fc8d8;border-radius:6px;position:relative;margin-top:0}.tap:after{content:"";position:absolute;right:-5px;top:-3px;width:7px;height:14px;border-radius:3px;background:#ec7e79}
 
-.drop{width:12px;height:16px;border-radius:70% 30% 60% 40%;transform:rotate(45deg);background:#48b7f2;margin:2px 0;opacity:.8;cursor:grab;touch-action:none;transition:transform 0.1s;}
-.drop:active{cursor:grabbing;transform:scale(1.2) rotate(45deg);}
+.drop{width:12px;height:16px;border-radius:70% 30% 60% 40%;transform:rotate(45deg);background:#48b7f2;opacity:.8;cursor:grab;touch-action:none;}
 .drop.falling{opacity:1;animation:fall .65s ease-in infinite}@keyframes fall{0%{transform:translateY(-4px) rotate(45deg);opacity:0}40%{opacity:1}100%{transform:translateY(22px) rotate(45deg);opacity:0}}
 
-.flask{position:relative;width:110px;height:145px;align-self:flex-end;margin-bottom:3px;display:flex;flex-direction:column;align-items:center;cursor:pointer}
-.flask-neck{width:26px;height:42px;border:2px solid #a6d8e8;border-bottom:none;background:#a9eaff1c;border-radius:4px 4px 0 0;z-index:2}
-.flask-body{position:relative;width:104px;height:100px;border:2px solid #a6d8e8;border-radius:20px 20px 45px 45px;background:#c8f1ff12;overflow:hidden;margin-top:-2px}
+.flask{position:relative;width:90px;height:145px;align-self:flex-end;margin-bottom:3px;display:flex;flex-direction:column;align-items:center;cursor:pointer}
+.flask-neck{width:22px;height:38px;border:2px solid #a6d8e8;border-bottom:none;background:#a9eaff1c;border-radius:3px 3px 0 0;z-index:2}
+.flask-body{position:relative;width:88px;height:102px;border:2px solid #a6d8e8;background:#c8f1ff12;overflow:hidden;margin-top:-2px;clip-path:polygon(32% 0%, 68% 0%, 100% 100%, 0% 100%);border-radius:0 0 25px 25px}
 .flask-liquid{position:absolute;left:0;right:0;bottom:0;height:47%;background:linear-gradient(90deg,#5bb8e89c,#a7e7f29c,#6cbbe7a6);transition:background .3s,height .3s}.flask-liquid.pink{background:linear-gradient(90deg,#c93eafbb,#f09bdfd9,#c33fb6bb)}.flask-liquid.cloudy{background:linear-gradient(90deg,#dceaf0c9,#ffffffed,#dceaf0c9)}.flask-liquid.yellow{background:linear-gradient(90deg,#d5ba35aa,#f5eaa5c9,#d5ba35aa)}
 
-.scene-caption{position:absolute;left:16px;top:12px;color:#a5d1e2;font-size:11px;letter-spacing:.5px}.scene-caption b{color:#effbff}.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:13px 15px;background:#082337;border-top:1px solid #1d536a}.btn{border:1px solid #2c7189;background:#123e56;color:#e8f8fc;border-radius:11px;padding:10px 13px;cursor:pointer;font-size:12px;font-weight:700;min-height:40px}.btn.primary{background:#0d9488;border-color:#2bd0bd;color:white}.btn:hover{filter:brightness(1.13)}.btn:focus-visible,.nav-btn:focus-visible,.tab:focus-visible{outline:3px solid #76e7d8;outline-offset:2px}.spacer{flex:1}.speed{display:flex;gap:8px;align-items:center;color:#a6cbd9;font-size:11px}.speed input{width:88px;accent-color:#36d6c2}
-.right-stack{display:flex;flex-direction:column;gap:14px}.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px}.stat{background:#0e364c;border:1px solid #235a70;border-radius:13px;padding:12px}.stat label{display:block;color:#8db7c8;font-size:11px;margin-bottom:7px}.stat strong{font-size:22px;color:#72e1d2}.stat small{display:block;color:#a5c9d7;margin-top:4px;font-size:10px}.result-body{padding:13px 15px}.notice{padding:12px;border-radius:12px;background:#123f54;color:#cdeaf2;font-size:12px;line-height:1.6}.notice strong{color:#ffffff}.equation{text-align:center;padding:13px 8px;border-radius:12px;background:#083747;border:1px solid #1b6370;font-size:17px;font-weight:800;letter-spacing:.3px;color:#8cf0df;margin:12px 0}.section-title{font-size:13px;margin:0 0 9px;color:#d9f4fa}.knowledge-list{margin:0;padding-left:18px;color:#aacbd9;font-size:12px;line-height:1.75}.knowledge-list li{margin-bottom:4px}.chart-wrap{padding:12px 14px 15px}.chart-wrap svg{width:100%;height:auto;display:block}.quiz{padding:14px 15px}.quiz p{font-size:12px;line-height:1.5;color:#c5e1eb}.answers{display:grid;gap:7px}.answer{display:flex;align-items:flex-start;gap:8px;border:1px solid #24586d;border-radius:10px;padding:9px;font-size:12px;color:#c8e1e9;cursor:pointer}.answer input{accent-color:#39d5c1;margin-top:2px}.feedback{font-size:12px;margin-top:10px;line-height:1.5}.feedback.good{color:#70e2b7}.feedback.bad{color:#ffd18a}.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.steps{padding:14px 16px}.step{display:flex;gap:10px;margin:11px 0;color:#a9cbd8;font-size:12px;line-height:1.5}.num{flex:0 0 23px;height:23px;display:grid;place-items:center;background:#0c756f;border-radius:50%;font-weight:800;color:white}.mini-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.mini{padding:12px;border:1px solid #24566b;border-radius:12px;background:#0b3045}.mini b{font-size:12px;display:block;margin-bottom:6px}.mini span{font-size:11px;color:#9cc4d4;line-height:1.5}.view{display:none}.view.active{display:block}.footer{padding:20px 10px 6px;text-align:center;font-size:11px;color:#7eacbf}.hidden{display:none!important}
+.scene-caption{position:absolute;left:16px;top:12px;color:#a5d1e2;font-size:11px;letter-spacing:.5px}.scene-caption b{color:#effbff}
+.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:13px 15px;background:#082337;border-top:1px solid #1d536a}
+.btn{border:1px solid #2c7189;background:#123e56;color:#e8f8fc;border-radius:11px;padding:10px 13px;cursor:pointer;font-size:12px;font-weight:700;min-height:40px}
+.btn.primary{background:#0d9488;border-color:#2bd0bd;color:white}.btn:hover{filter:brightness(1.13)}
+.spacer{flex:1}.speed{display:flex;gap:8px;align-items:center;color:#a6cbd9;font-size:11px}.speed input{width:88px;accent-color:#36d6c2}
+.right-stack{display:flex;flex-direction:column;gap:14px}.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px}.stat{background:#0e364c;border:1px solid #235a70;border-radius:13px;padding:12px}.stat label{display:block;color:#8db7c8;font-size:11px;margin-bottom:7px}.stat strong{font-size:22px;color:#72e1d2}.stat small{display:block;color:#a5c9d7;margin-top:4px;font-size:10px}.result-body{padding:13px 15px}.notice{padding:12px;border-radius:12px;background:#123f54;color:#cdeaf2;font-size:12px;line-height:1.6}.notice strong{color:#ffffff}.equation{text-align:center;padding:13px 8px;border-radius:12px;background:#083747;border:1px solid #1b6370;font-size:17px;font-weight:800;letter-spacing:.3px;color:#8cf0df;margin:12px 0}.section-title{font-size:13px;margin:0 0 9px;color:#d9f4fa}.chart-wrap{padding:12px 14px 15px}.chart-wrap svg{width:100%;height:auto;display:block}.quiz{padding:14px 15px}.quiz p{font-size:12px;line-height:1.5;color:#c5e1eb}.answers{display:grid;gap:7px}.answer{display:flex;align-items:flex-start;gap:8px;border:1px solid #24586d;border-radius:10px;padding:9px;font-size:12px;color:#c8e1e9;cursor:pointer}.answer input{accent-color:#39d5c1;margin-top:2px}.feedback{font-size:12px;margin-top:10px;line-height:1.5}.feedback.good{color:#70e2b7}.feedback.bad{color:#ffd18a}.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}.steps{padding:14px 16px}.step{display:flex;gap:10px;margin:11px 0;color:#a9cbd8;font-size:12px;line-height:1.5}.num{flex:0 0 23px;height:23px;display:grid;place-items:center;background:#0c756f;border-radius:50%;font-weight:800;color:white}.mini-cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.mini{padding:12px;border:1px solid #24566b;border-radius:12px;background:#0b3045}.mini b{font-size:12px;display:block;margin-bottom:6px}.mini span{font-size:11px;color:#9cc4d4;line-height:1.5}.view{display:none}.view.active{display:block}.footer{padding:20px 10px 6px;text-align:center;font-size:11px;color:#7eacbf}.hidden{display:none!important}
 @media(max-width:1000px){.layout{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.nav-btn{justify-content:center;flex-direction:column;text-align:center;padding:10px 5px;font-size:11px}.side-note{display:none}.grid{grid-template-columns:minmax(0,1.15fr) minmax(250px,.85fr)}}
 
-/* CSS cho thí nghiệm tách lớp (phễu chiết) mục 4 */
-.sep-stage{display:none;position:relative;min-height:280px;width:100%;align-items:center;justify-content:center;gap:28px;padding:20px}.sep-stage.active{display:flex}
+/* CSS Phễu chiết mục 4 (2 bình riêng biệt: Nước và Dầu) */
+.sep-stage{display:none;position:relative;min-height:280px;width:100%;align-items:center;justify-content:center;gap:20px;padding:20px}.sep-stage.active{display:flex}
+.sep-initial-view{display:flex;align-items:center;justify-content:center;gap:35px;width:100%}
+.sep-vessel-single{position:relative;width:95px;height:140px;border:2px solid #b9e7f4;border-radius:15px;background:rgba(216,246,255,0.08);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;overflow:hidden}
+.sep-single-liquid{position:absolute;bottom:0;left:0;right:0;height:65%}
+.liquid-water{background:linear-gradient(90deg,#4aa9e888,#b7e9ffaa,#4196d088)}
+.liquid-oil{background:linear-gradient(90deg,#f4d35eaa,#ffe89acc,#d6ae3caa)}
+
+.sep-funnel-view{display:none;align-items:center;justify-content:center;gap:28px;width:100%}
+.sep-funnel-view.active{display:flex}
 .sep-vessel{position:relative;width:150px;height:210px;display:flex;align-items:center;justify-content:center}
 .sep-glass{position:relative;width:108px;height:155px;border:3px solid #b9e7f4;border-radius:48% 48% 45% 45% / 18% 18% 60% 60%;background:#d8f6ff12;overflow:hidden}
 .sep-layer{position:absolute;left:2px;right:2px;transition:height .8s ease,bottom .8s ease}
@@ -52,7 +63,7 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 .sep-neck{position:absolute;bottom:12px;width:18px;height:28px;border:2px solid #b9e7f4;background:#c6f2ff20}
 .sep-stopcock{position:absolute;bottom:0;width:44px;height:9px;border-radius:5px;background:#b9dce8}
 .sep-stopcock:after{content:"";position:absolute;left:17px;top:-7px;width:8px;height:23px;border-radius:4px;background:#ef8b80;transition:transform 0.3s}
-.sep-glass.draining ~ .sep-stopcock:after,.sep-stage.draining-active .sep-stopcock:after{transform:rotate(90deg);background:#52e0c4}
+.sep-glass.draining ~ .sep-stopcock:after,.sep-funnel-view.draining-active .sep-stopcock:after{transform:rotate(90deg);background:#52e0c4}
 
 .sep-stream{position:absolute;bottom:-18px;left:70px;width:4px;height:0px;background:linear-gradient(to bottom,#4aa9e8,#b7e9ff);opacity:0;transition:height 0.3s}
 .sep-stream.active{height:45px;opacity:0.9;animation:streamFlow 0.4s linear infinite}
@@ -63,7 +74,7 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 .sep-cup.filled .sep-cup-liquid{height:55%}
 .sep-label{position:absolute;bottom:-25px;width:150px;text-align:center;font-size:12px;color:#d6f2fa}
 
-/* CSS cho thí nghiệm Sắc ký giấy (Mục 02) */
+/* CSS Sắc ký lá cây mục 2 */
 .chromato-stage{display:none;position:relative;min-height:280px;width:100%;align-items:center;justify-content:center;gap:20px;padding:20px}
 .chromato-stage.active{display:flex}
 .chromato-jar{position:relative;width:140px;height:210px;border:2px solid #b9e7f4;border-bottom:none;border-radius:15px 15px 0 0;background:rgba(216,246,255,0.08);overflow:hidden;display:flex;align-items:center;justify-content:center}
@@ -75,7 +86,6 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 .band-xantophin{background:#f1c40f;bottom:15px;height:0px}
 .band-chlorophyll-a{background:#27ae60;bottom:15px;height:0px}
 .band-chlorophyll-b{background:#1e8449;bottom:15px;height:0px}
-
 .chromato-jar.running .chromato-solvent{height:120px}
 .chromato-jar.running .band-caroten{bottom:120px;height:12px;opacity:0.9}
 .chromato-jar.running .band-xantophin{bottom:95px;height:14px;opacity:0.9}
@@ -83,7 +93,7 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 .chromato-jar.running .band-chlorophyll-b{bottom:35px;height:16px;opacity:0.9}
 .chromato-jar.running .chromato-spot{opacity:0}
 
-/* CSS giao diện Pin điện hóa (Mục 03) */
+/* CSS Pin điện hóa mục 3 (Có tương tác chạy hoạt ảnh điện tử và dòng ion) */
 .cell-stage{display:none;position:relative;min-height:280px;width:100%;align-items:center;justify-content:center;gap:15px;padding:20px}
 .cell-stage.active{display:flex}
 .half-cell{position:relative;width:110px;height:180px;border:2px solid #a6d8e8;border-top:none;border-radius:0 0 20px 20px;background:rgba(200,241,255,0.08);overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
@@ -93,13 +103,11 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 .electrode{position:absolute;top:10px;width:18px;height:120px;border-radius:3px;z-index:3}
 .zinc-electrode{background:linear-gradient(90deg,#b0c4de,#d3d3d3,#808080);border:1px solid #708090}
 .copper-electrode{background:linear-gradient(90deg,#e3963e,#f5b35c,#b8621b);border:1px solid #8c4109}
-
 .salt-bridge{position:relative;width:70px;height:90px;margin-top:-60px;border:4px solid #d5ecf5;border-bottom:none;border-radius:35px 35px 0 0;background:rgba(213,236,245,0.25);z-index:4;display:flex;align-items:center;justify-content:center}
 .salt-bridge-label{position:absolute;top:25px;font-size:9px;color:#fff;background:rgba(11,117,109,0.8);padding:1px 4px;border-radius:4px;white-space:nowrap}
-
 .cell-wire{position:absolute;top:10px;left:50px;right:50px;height:25px;border-top:3px dashed #ffe36e;z-index:4}
 .electron-dot{position:absolute;top:-6px;left:10px;width:10px;height:10px;border-radius:50%;background:#ffe36e;box-shadow:0 0 8px #ffe36e;display:none}
-.cell-stage.active .electron-dot{display:block;animation:moveElectron 1.5s linear infinite}
+.cell-stage.running .electron-dot{display:block;animation:moveElectron 1.2s linear infinite}
 @keyframes moveElectron{0%{left:10px;}100%{left:calc(100% - 20px);}}
 
 @media(max-width:700px){header{align-items:flex-start;padding:15px;flex-direction:column}.header-tag{white-space:normal}.brand h1{font-size:21px}.layout{padding:12px}.sidebar{grid-template-columns:repeat(5,minmax(0,1fr))}.grid,.bottom-grid{grid-template-columns:1fr}.intro{align-items:flex-start;flex-direction:column}.scene{min-height:300px;padding:18px 8px 12px}.scene-inner{min-height:255px;gap:2px}.bottle{width:65px}.bottle-shape{width:55px;height:100px}.stand{width:80px;min-width:80px;height:220px}.buret{height:130px}.flask{width:95px;height:130px}.bottle-label{font-size:10px}.bottle small{font-size:9px}.controls .spacer{display:none}.speed{width:100%;justify-content:flex-start}.equation{font-size:15px}.panel-head{padding:13px}.stat strong{font-size:20px}}
@@ -156,7 +164,7 @@ let experiment='titration',volume=0,timer=null,quizIndex=0,quizChecked=false;
 const quiz=[
 {q:'Ở 25 °C, 25 mL HCl 0,1 M được chuẩn độ bằng NaOH 0,1 M. Thể tích NaOH tại điểm tương đương là bao nhiêu?',a:['12,5 mL','25,0 mL','50,0 mL','100 mL'],correct:1,why:'Hai dung dịch có cùng nồng độ và phản ứng theo tỉ lệ mol 1:1, nên cần 25,0 mL NaOH.'},
 {q:'Ion nào kết hợp với OH⁻ để tạo thành nước trong phản ứng trung hòa?',a:['Na⁺','Cl⁻','H⁺','O₂'],correct:2,why:'Phương trình ion rút gọn là H⁺ + OH⁻ → H₂O.'},
-{q:'Phenolphthalein thường chuyển sang màu hồng khi nào?',a:['Trong môi trường bazơ đủ mạnh theo khoảng chuyển màu','Trong mọi dung dịch không màu','Chỉ khi có kết tủa','Khi dung dịch luôn ở pH = 7'],correct:0,why:'Phenolphthalein chuyển hồng trong khoảng pH bazơ, xấp xỉ 8,2–10.'},
+{q:'Phenolphthalein thường chuyển sang màu hồng khi nào?',a:['Trong môi trường bazơ đủ mạnh theo khoảng chuyển màu','In mọi dung dịch không màu','Chỉ khi có kết tủa','Khi dung dịch luôn ở pH = 7'],correct:0,why:'Phenolphthalein chuyển hồng trong khoảng pH bazơ, xấp xỉ 8,2–10.'},
 {q:'Với chuẩn độ HCl bằng NaOH, trước điểm tương đương dung dịch còn dư chất nào?',a:['NaOH','HCl','NaCl rắn','O₂'],correct:1,why:'Trước điểm tương đương, số mol OH⁻ thêm vào chưa đủ để trung hòa hết H⁺ ban đầu.'},
 {q:'Phương trình ion rút gọn của phản ứng trung hòa axit mạnh – bazơ mạnh là gì?',a:['Na⁺ + Cl⁻ → NaCl','H⁺ + OH⁻ → H₂O','H₂O → H₂ + O₂','HCl → H₂ + Cl₂'],correct:1,why:'Ion H⁺ và OH⁻ tạo thành nước; các ion còn lại là ion khán giả trong trường hợp này.'}
 ];
@@ -187,11 +195,11 @@ function updateTitration(){
         $('#observation').innerHTML='Dung dịch vẫn không màu; axit còn dư. pH tăng dần khi thêm NaOH.';
         $('#explanation').textContent='OH⁻ đã thêm vào phản ứng với một phần H⁺, nhưng lượng axit ban đầu vẫn còn dư.';
     }else if(volume<=25){
-        $('#observation').innerHTML='Đang tiến gần điểm tương đương. Hãy thêm từng lượng nhỏ để quan sát pH thay đổi nhanh.';
-        $('#explanation').textContent='Gần điểm tương đương, một lượng nhỏ dung dịch chuẩn có thể làm pH thay đổi đáng kể.';
-    }else{ 
-        $('#observation').innerHTML='Dung dịch chuyển hồng do phenolphthalein trong môi trường bazơ; NaOH đang dư.';
-        $('#explanation').textContent='Sau điểm tương đương, OH⁻ dư làm pH tăng và phenolphthalein chuyển hồng.';
+        $('#observation').innerHTML='Dung dịch đang tiến gần điểm tương đương. Hãy thêm lượng nhỏ để quan sát.';
+        $('#explanation').textContent='Gần điểm tương đương, pH thay đổi rất nhanh.';
+    }else{
+        $('#observation').innerHTML='Dung dịch chuyển hồng do phenolphthalein trong môi trường bazơ dư.';
+        $('#explanation').textContent='Sau điểm tương đương, dư ion OH⁻ làm dung dịch có tính kiềm.';
     }
     updateChart();
 }
@@ -271,12 +279,12 @@ function setExp(key){
         $('#volume-note').textContent='Anode (-) sang Cathode (+)';
         $('#ph-note').textContent='Cầu muối khép kín mạch';
         $('#equation').textContent='Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)';
-        $('#observation').innerHTML='<strong>Pin điện hóa hoạt động:</strong> Kẽm oxi hóa ở anode, ion đồng khử ở cathode. Cầu muối duy trì trung hòa điện.';
-        $('#explanation').textContent='Thanh Zn tan dần, thanh Cu lớn lên, electron chạy qua dây dẫn từ Zn sang Cu.';
+        $('#observation').innerHTML='<strong>Pin điện hóa sẵn sàng:</strong> Nhấn nút "Bắt đầu pin" để quan sát electron chạy qua dây dẫn ngoài.';
+        $('#explanation').textContent='Kẽm oxi hóa ở anode, ion đồng khử ở cathode.';
         $('#add-one').textContent='▶ Bắt đầu pin';
         $('#add-five').textContent='↻ Đổi trạng thái';
         $('#auto-run').classList.add('hidden');
-        $('#status').textContent='Pin hoạt động';
+        $('#status').textContent='Chờ chạy';
         $('#curve').setAttribute('d','');
         $('#chart-point').style.display='none';
     }
@@ -296,7 +304,13 @@ function add(v){
             $('#observation').innerHTML='<strong>Kết quả sắc ký:</strong> Tách thành công 4 vạch sắc tố từ trên xuống: Caroten (cam), Xantophin (vàng), Clorophyl a (xanh lá đậm), Clorophyl b (xanh lá nhạt).';
         }
     }else if(experiment==='cell'){
-        $('#observation').innerHTML='<strong>Pin đang phóng điện ổn định:</strong> Cầu muối trung hòa ion giữa hai cốc, vôn kế chỉ khoảng 1.10 V.';
+        const cellStage=$('#cell-stage');
+        if(cellStage){
+            cellStage.classList.toggle('running');
+            const isRunning=cellStage.classList.contains('running');
+            $('#status').textContent=isRunning?'Pin hoạt động':'Đã dừng';
+            $('#observation').innerHTML=isRunning?'<strong>Pin đang phóng điện:</strong> Electron dịch chuyển từ cực Zn sang cực Cu qua dây dẫn ngoài.':'<strong>Đã tạm dừng pin.</strong>';
+        }
     }
     if(experiment!=='cell' && experiment!=='precipitation') updateChart();
 }
@@ -307,12 +321,13 @@ $('#add-one').addEventListener('click',()=>{
     if(experiment==='separation') advanceSeparation(false);
     else if(experiment==='titration') add(1);
     else if(experiment==='precipitation') add(1);
+    else if(experiment==='cell') add(1);
     else add(1);
 });
 $('#add-five').addEventListener('click',()=>{
     if(experiment==='separation'){
-        if(separationStage<2) advanceSeparation(true);
-        else $('#status').textContent='Đã đóng khóa';
+        if(sepStep<3) advanceSeparationStep();
+        else $('#status').textContent='Đã hoàn tất';
     } else if(experiment==='titration') add(5);
     else if(experiment==='precipitation'){
         const jar=$('#chromato-jar');
@@ -320,16 +335,23 @@ $('#add-five').addEventListener('click',()=>{
         $('#volume').textContent='Chưa chạy';
         $('#status').textContent='Sẵn sàng';
         $('#observation').innerHTML='Đã làm mới giấy sắc ký. Nhấn "Chạy sắc ký" để thực hiện lại.';
+    } else if(experiment==='cell'){
+        const cellStage=$('#cell-stage');
+        if(cellStage) cellStage.classList.remove('running');
+        $('#status').textContent='Sẵn sàng';
+        $('#observation').innerHTML='Đã đặt lại trạng thái pin.';
     }
     else add(1);
 });
 $('#auto-run').addEventListener('click',autoRun);
 $('#reset').addEventListener('click',()=>{
     if(experiment==='separation'){
-        separationStage=0;
+        sepStep=0;
         renderSeparation();
     } else if(experiment==='cell'){
-        renderCell();
+        const cellStage=$('#cell-stage');
+        if(cellStage) cellStage.classList.remove('running');
+        $('#status').textContent='Sẵn sàng';
     } else if(experiment==='precipitation'){
         const jar=$('#chromato-jar');
         if(jar) jar.classList.remove('running');
@@ -344,43 +366,18 @@ $('#speed').addEventListener('input',()=>{if(timer){stopAuto();autoRun();}});
 $$('.tab').forEach(b=>b.addEventListener('click',()=>setExp(b.dataset.experiment)));
 $$('.nav-btn').forEach(b=>b.addEventListener('click',()=>{const key=b.dataset.view;$$('.nav-btn').forEach(x=>x.classList.toggle('active',x===b));$$('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+key));}));
 
-// Kéo thả ống hút
+// Kéo thả ống hút chuẩn xác
 const dropper=$('#drop');
 let isDragging=false;
 dropper.addEventListener('pointerdown',(e)=>{isDragging=true;dropper.setPointerCapture(e.pointerId);dropper.style.position='absolute';dropper.style.zIndex=100;});
 dropper.addEventListener('pointermove',(e)=>{if(!isDragging)return;const sceneRect=$('#scene').getBoundingClientRect();const x=e.clientX-sceneRect.left;const y=e.clientY-sceneRect.top;dropper.style.left=(x-20)+'px';dropper.style.top=(y-20)+'px';});
-dropper.addEventListener('pointerup',(e)=>{if(!isDragging)return;isDragging=false;dropper.releasePointerCapture(e.pointerId);const flaskRect=$('#flask-target').getBoundingClientRect();const dropRect=dropper.getBoundingClientRect();if(dropRect.left>=flaskRect.left-30&&dropRect.right<=flaskRect.right+30&&dropRect.top>=flaskRect.top-30&&dropRect.bottom<=flaskRect.bottom+30){if(experiment==='titration'){add(1);}}dropper.style.position='relative';dropper.style.left='0px';dropper.style.top='0px';});
+dropper.addEventListener('pointerup',(e)=>{if(!isDragging)return;isDragging=false;dropper.releasePointerCapture(e.pointerId);const flaskRect=$('#flask-target').getBoundingClientRect();const dropRect=dropper.getBoundingClientRect();if(dropRect.left>=flaskRect.left-40&&dropRect.right<=flaskRect.right+40&&dropRect.top>=flaskRect.top-40&&dropRect.bottom<=flaskRect.bottom+40){if(experiment==='titration'){add(1);}}dropper.style.position='relative';dropper.style.left='0px';dropper.style.top='0px';});
 
 function renderQuiz(){const q=quiz[quizIndex];$('#quiz-count').textContent='Câu '+(quizIndex+1)+' / '+quiz.length;$('#quiz-question').textContent=q.q;$('#quiz-answers').innerHTML='';q.a.forEach((a,i)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='radio';input.name='quiz-answer';input.value=i;const span=document.createElement('span');span.textContent=a;label.append(input,span);$('#quiz-answers').append(label);});$('#quiz-feedback').textContent='';$('#quiz-feedback').className='feedback';quizChecked=false;$('#check-answer').disabled=false;}
 $('#check-answer').addEventListener('click',()=>{if(quizChecked)return;const picked=$('input[name="quiz-answer"]:checked');if(!picked){$('#quiz-feedback').textContent='Hãy chọn một đáp án trước nhé.';$('#quiz-feedback').className='feedback bad';return;}quizChecked=true;const q=quiz[quizIndex];const good=Number(picked.value)===q.correct;$('#quiz-feedback').textContent=(good?'Chính xác! ':'Chưa đúng. ')+q.why;$('#quiz-feedback').className='feedback '+(good?'good':'bad');});$('#next-question').addEventListener('click',()=>{quizIndex=(quizIndex+1)%quiz.length;renderQuiz();});
 
-// Giao diện Sắc ký giấy (Mục 02)
-function renderChromato(){
-    const scene=$('#scene');
-    let chromatoStage=$('#chromato-stage');
-    if(!chromatoStage){
-        chromatoStage=document.createElement('div');
-        chromatoStage.id='chromato-stage';
-        chromatoStage.className='chromato-stage';
-        chromatoStage.innerHTML=`
-            <div class="chromato-jar" id="chromato-jar">
-                <div class="chromato-solvent"></div>
-                <div class="chromato-paper">
-                    <div class="chromato-spot"></div>
-                    <div class="pigment-band band-caroten" title="Caroten (Cam)"></div>
-                    <div class="pigment-band band-xantophin" title="Xantophin (Vàng)"></div>
-                    <div class="pigment-band band-chlorophyll-a" title="Clorophyl a (Xanh đậm)"></div>
-                    <div class="pigment-band band-chlorophyll-b" title="Clorophyl b (Xanh nhạt)"></div>
-                </div>
-            </div>
-        `;
-        scene.appendChild(chromatoStage);
-    }
-    chromatoStage.classList.add('active');
-}
-
-// Tách lớp bằng phễu chiết
-let separationStage=0;
+// Thí nghiệm tách lớp (Mục 04): 2 bình riêng biệt đổ vào phễu chiết
+let sepStep=0; // 0: 2 bình riêng (Nước & Dầu), 1: Đã đổ vào phễu, 2: Phân lớp, 3: Đã tháo nước
 function renderSeparation(){
     const scene=$('#scene');
     let stage=$('#sep-stage');
@@ -388,59 +385,92 @@ function renderSeparation(){
         stage=document.createElement('div');
         stage.id='sep-stage';
         stage.className='sep-stage';
-        stage.innerHTML='<div class="sep-vessel"><div class="sep-glass" id="sep-glass"><div class="sep-layer sep-oil"></div><div class="sep-layer sep-water"></div></div><div class="sep-neck"></div><div class="sep-stopcock"></div><div class="sep-stream" id="sep-stream"></div><div class="sep-label">Phễu chiết</div></div><div class="sep-cup" id="sep-cup"><div class="sep-cup-liquid" id="sep-cup-liquid"></div><div class="sep-label">Cốc hứng</div></div>';
         scene.appendChild(stage);
     }
     const sceneInner=$('#scene-inner');
     if(sceneInner) sceneInner.style.display='none';
     stage.classList.add('active');
-    
+
+    let html='';
+    if(sepStep===0){
+        html=`
+            <div class="sep-initial-view">
+                <div style="text-align:center">
+                    <div class="sep-vessel-single"><div class="sep-single-liquid liquid-water"></div></div>
+                    <div style="font-size:12px;margin-top:6px;color:#d6f2fa">Bình chứa Nước</div>
+                </div>
+                <div style="text-align:center">
+                    <div class="sep-vessel-single"><div class="sep-single-liquid liquid-oil"></div></div>
+                    <div style="font-size:12px;margin-top:6px;color:#d6f2fa">Bình chứa Dầu</div>
+                </div>
+            </div>
+        `;
+        $('#add-one').textContent='＋ Rót chung vào phễu';
+        $('#add-five').textContent='⏩ Bỏ qua bước';
+        $('#status').textContent='Chờ rót dung dịch';
+        $('#scene-caption').textContent='Hai bình riêng biệt chứa nước và dầu';
+        $('#observation').innerHTML='<strong>Bước 1:</strong> Chuẩn bị hai bình riêng biệt (1 bình nước, 1 bình dầu). Nhấn <strong>“Rót chung vào phễu”</strong> để đổ vào phễu chiết.';
+    } else {
+        let glassClass='', streamClass='', cupClass='', drainingActive='';
+        if(sepStep===1) glassClass='mixed';
+        else if(sepStep===2) glassClass='layered';
+        else if(sepStep===3){ glassClass='draining'; streamClass='active'; cupClass='filled'; drainingActive='draining-active'; }
+
+        html=`
+            <div class="sep-funnel-view active ${drainingActive}">
+                <div class="sep-vessel">
+                    <div class="sep-glass ${glassClass}">
+                        <div class="sep-layer sep-oil"></div>
+                        <div class="sep-layer sep-water"></div>
+                    </div>
+                    <div class="sep-neck"></div>
+                    <div class="sep-stopcock"></div>
+                    <div class="sep-stream ${streamClass}" id="sep-stream"></div>
+                    <div class="sep-label">Phễu chiết</div>
+                </div>
+                <div class="sep-cup ${cupClass}" id="sep-cup">
+                    <div class="sep-cup-liquid" id="sep-cup-liquid"></div>
+                    <div class="sep-label">Cốc hứng nước</div>
+                </div>
+            </div>
+        `;
+        if(sepStep===1){
+            $('#add-one').textContent='⏳ Để yên phân lớp';
+            $('#status').textContent='Đang hỗn hợp';
+            $('#scene-caption').textContent='Hai chất lỏng được trộn chung trong phễu';
+            $('#observation').innerHTML='<strong>Bước 2:</strong> Hỗn hợp dầu và nước trong phễu chiết. Nhấn nút để chờ phân lớp.';
+        }else if(sepStep===2){
+            $('#add-one').textContent='🔓 Mở khóa tháo nước';
+            $('#status').textContent='Đã phân lớp';
+            $('#scene-caption').textContent='Chất lỏng phân thành 2 lớp rõ rệt';
+            $('#observation').innerHTML='<strong>Bước 3:</strong> Dầu nhẹ hơn nổi lên trên, nước nặng hơn lắng xuống dưới. Nhấn <strong>“Mở khóa tháo nước”</strong>.';
+        }else if(sepStep===3){
+            $('#add-one').textContent='✓ Hoàn tất tách';
+            $('#add-one').disabled=true;
+            $('#status').textContent='Đã tháo xong nước';
+            $('#scene-caption').textContent='Lớp nước đã chảy xuống cốc, lớp dầu ở lại phễu';
+            $('#observation').innerHTML='<strong>Hoàn thành:</strong> Nước đã chảy hết xuống cốc hứng, để lại lớp dầu tinh khiết bên trong phễu chiết.';
+        }
+    }
+    stage.innerHTML=html;
     $('#scene-title').textContent='Tách dầu và nước bằng phễu chiết';
-    $('#scene-subtitle').textContent='Hai chất lỏng không hòa tan vào nhau';
-    $('#scene-caption').textContent=['Để yên cho hai lớp phân tách','Hai lớp phân tách rõ ràng','Mở khóa cho nước chảy xuống cốc','Đã tách hoàn tất lớp nước'][separationStage];
+    $('#scene-subtitle').textContent='Từ 2 bình riêng biệt đến phễu chiết';
     $('#stat-label-one').textContent='Trạng thái tách';
     $('#stat-label-two').textContent='Lớp ở dưới';
-    $('#volume').textContent=['Chưa trộn','Đang phân lớp','Đã phân lớp','Đã tháo lớp dưới'][separationStage];
+    $('#volume').textContent=['Chưa rót','Đã rót vào phễu','Đã phân lớp','Đã tháo lớp nước'][sepStep];
     $('#ph').textContent='Nước';
     $('#volume-note').textContent='Dầu nhẹ hơn nước';
     $('#ph-note').textContent='Nước nằm dưới';
     $('#equation').textContent='Dầu + nước → hai lớp riêng biệt';
-    $('#chart-caption').textContent='Các bước tách lớp';
-    $('#chart-note').textContent='Minh họa định tính: dầu thường nổi trên mặt nước vì nhẹ hơn và không hòa tan trong nước.';
-    $('#observation-title').textContent='Hiện tượng';
-    $('#observation').textContent=['Hai chất lỏng được đưa vào phễu chiết. Nhấn “Rót dung dịch” để bắt đầu.','Sau khi để yên, chất lỏng dần phân thành hai lớp: dầu ở trên, nước ở dưới.','Đang mở khóa: dòng nước chảy qua vòi xuống cốc hứng, lớp dầu được giữ lại ở trên.','Lớp nước ở dưới đã được tháo ra hoàn toàn; lớp dầu vẫn nằm an toàn trong phễu chiết.'][separationStage];
-    
-    const glass=$('#sep-glass');
-    const stream=$('#sep-stream');
-    const cup=$('#sep-cup');
-    
-    glass.className='sep-glass '+(separationStage===0?'':separationStage===1?'mixed':separationStage===2?'layered':'draining');
-    if(separationStage===3){
-        stage.classList.add('draining-active');
-        stream.classList.add('active');
-        cup.classList.add('filled');
-    } else {
-        stage.classList.remove('draining-active');
-        stream.classList.remove('active');
-        cup.classList.remove('filled');
-    }
-    
-    $('#add-one').textContent=['＋ Rót dung dịch','⏳ Để yên phân lớp','🔓 Mở khóa cho nước chảy','✓ Đã tách lớp dưới'][separationStage];
-    $('#add-one').disabled=(separationStage===3);
-    $('#add-five').textContent=separationStage<2?'⏩ Phân lớp nhanh':'🔒 Đóng khóa';
-    $('#auto-run').classList.add('hidden');
-    $('#status').textContent=['Chờ rót','Đang phân lớp','Sẵn sàng tháo nước','Đang chảy vào cốc'][separationStage];
     $('#curve').setAttribute('d','');
     $('#chart-point').style.display='none';
 }
-function advanceSeparation(fast=false){
-    if(separationStage===0) separationStage=fast?2:1;
-    else if(separationStage===1) separationStage=2;
-    else if(separationStage===2) separationStage=3;
+function advanceSeparationStep(){
+    if(sepStep<3) sepStep++;
     renderSeparation();
 }
 
-// Hiển thị Pin điện hóa với Cầu muối (Mục 03)
+// Giao diện Pin điện hóa với Cầu muối (Mục 03)
 function renderCell(){
     const scene=$('#scene');
     let cellStage=$('#cell-stage');
