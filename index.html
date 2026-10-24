@@ -27,7 +27,7 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 .drop:active{cursor:grabbing;transform:scale(1.2) rotate(45deg);}
 .drop.falling{opacity:1;animation:fall .65s ease-in infinite}@keyframes fall{0%{transform:translateY(-4px) rotate(45deg);opacity:0}40%{opacity:1}100%{transform:translateY(22px) rotate(45deg);opacity:0}}
 
-/* Sửa lỗi giao diện Bình tam giác (Flask) chuẩn không bị lệch */
+/* Bình tam giác (Flask) chuẩn không bị lệch */
 .flask{position:relative;width:110px;height:145px;align-self:flex-end;margin-bottom:3px;display:flex;flex-direction:column;align-items:center;cursor:pointer}
 .flask-neck{width:26px;height:42px;border:2px solid #a6d8e8;border-bottom:none;background:#a9eaff1c;border-radius:4px 4px 0 0;z-index:2}
 .flask-body{position:relative;width:104px;height:100px;border:2px solid #a6d8e8;border-radius:20px 20px 45px 45px;background:#c8f1ff12;overflow:hidden;margin-top:-2px}
@@ -140,7 +140,7 @@ $$('.nav-btn').forEach(b=>b.addEventListener('click',()=>{const key=b.dataset.vi
 
 // Thêm tính năng kéo thả ống hút (Dropper Drag & Drop) từ NaOH sang Flask
 const dropper = $('#drop');
-let isDragging = false, startX = 0, startY = 0;
+let isDragging = false;
 
 dropper.addEventListener('pointerdown', (e) => {
     isDragging = true;
@@ -163,7 +163,6 @@ dropper.addEventListener('pointerup', (e) => {
     isDragging = false;
     dropper.releasePointerCapture(e.pointerId);
     
-    // Kiểm tra xem có thả vào vùng bình tam giác (flask) hay không
     const flaskRect = $('#flask-target').getBoundingClientRect();
     const dropRect = dropper.getBoundingClientRect();
     
@@ -173,7 +172,6 @@ dropper.addEventListener('pointerup', (e) => {
             add(1);
         }
     }
-    // Trả ống hút về vị trí cũ
     dropper.style.position = 'relative';
     dropper.style.left = '0px';
     dropper.style.top = '0px';
@@ -182,7 +180,6 @@ dropper.addEventListener('pointerup', (e) => {
 function renderQuiz(){const q=quiz[quizIndex];$('#quiz-count').textContent='Câu '+(quizIndex+1)+' / '+quiz.length;$('#quiz-question').textContent=q.q;$('#quiz-answers').innerHTML='';q.a.forEach((a,i)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='radio';input.name='quiz-answer';input.value=i;const span=document.createElement('span');span.textContent=a;label.append(input,span);$('#quiz-answers').append(label);});$('#quiz-feedback').textContent='';$('#quiz-feedback').className='feedback';quizChecked=false;$('#check-answer').disabled=false;}
 $('#check-answer').addEventListener('click',()=>{if(quizChecked)return;const picked=$('input[name="quiz-answer"]:checked');if(!picked){$('#quiz-feedback').textContent='Hãy chọn một đáp án trước nhé.';$('#quiz-feedback').className='feedback bad';return;}quizChecked=true;const q=quiz[quizIndex];const good=Number(picked.value)===q.correct;$('#quiz-feedback').textContent=(good?'Chính xác! ':'Chưa đúng. ')+q.why;$('#quiz-feedback').className='feedback '+(good?'good':'bad');});$('#next-question').addEventListener('click',()=>{quizIndex=(quizIndex+1)%quiz.length;renderQuiz();});
 
-// Mô phỏng tách dầu và nước bằng phễu chiết
 let separationStage=0;
 function renderSeparation(){const scene=$('#scene');let stage=$('#sep-stage');if(!stage){stage=document.createElement('div');stage.id='sep-stage';stage.className='sep-stage';stage.innerHTML='<div class="sep-vessel"><div class="sep-glass" id="sep-glass"><div class="sep-layer sep-oil"></div><div class="sep-layer sep-water"></div></div><div class="sep-neck"></div><div class="sep-stopcock"></div><div class="sep-drop" id="sep-drop"></div><div class="sep-label">Phễu chiết</div></div><div class="sep-cup" id="sep-cup"><div class="sep-label">Cốc hứng</div></div>';scene.appendChild(stage);}$('#scene-inner').style.display='none';stage.classList.add('active');$('#scene-title').textContent='Tách dầu và nước bằng phễu chiết';$('#scene-subtitle').textContent='Hai chất lỏng không hòa tan vào nhau';$('#scene-caption').textContent='Để yên cho hai lớp phân tách';$('#stat-label-one').textContent='Trạng thái tách';$('#stat-label-two').textContent='Lớp ở dưới';$('#volume').textContent=['Chưa trộn','Đang phân lớp','Đã phân lớp','Đã tháo lớp dưới'][separationStage];$('#ph').textContent='Nước';$('#volume-note').textContent='Dầu nhẹ hơn nước';$('#ph-note').textContent='Nước nằm dưới';$('#equation').textContent='Dầu + nước → hai lớp riêng biệt';$('#chart-caption').textContent='Các bước tách lớp';$('#chart-note').textContent='Minh họa định tính: dầu thường nổi trên mặt nước vì nhẹ hơn và không hòa tan trong nước.';$('#observation-title').textContent='Hiện tượng';$('#observation').textContent=['Hai chất lỏng được đưa vào phễu chiết. Nhấn “Rót dung dịch” để bắt đầu.','Sau khi để yên, chất lỏng dần phân thành hai lớp: dầu ở trên, nước ở dưới.','Hai lớp đã rõ ràng. Mở khóa để cho lớp nước ở dưới chảy vào cốc hứng.','Lớp nước ở dưới đã được tháo ra; lớp dầu vẫn ở trong phễu chiết.'][separationStage];$('#explanation').textContent='Phễu chiết tách hai chất lỏng không hòa tan vào nhau dựa trên sự khác nhau về khối lượng riêng. Lớp có khối lượng riêng lớn hơn nằm dưới.';$('#sep-glass').className='sep-glass '+(separationStage===0?'':separationStage===1?'mixed':separationStage===2?'layered':'layered draining');$('#sep-cup').classList.toggle('filled',separationStage===3);$('#sep-drop').classList.toggle('flow',separationStage===3);$('#add-one').textContent=['＋ Rót dung dịch','⏳ Để yên phân lớp','🔓 Mở khóa','✓ Đã tách lớp dưới'][separationStage];$('#add-one').disabled=separationStage===3;$('#add-five').textContent=separationStage<2?'⏩ Phân lớp nhanh':'🔒 Đóng khóa';$('#auto-run').classList.add('hidden');$('#status').textContent=['Chờ rót','Đang phân lớp','Sẵn sàng tháo lớp dưới','Hoàn tất'][separationStage];$('#curve').setAttribute('d','');$('#chart-point').style.display='none';}
 function exitSeparation(){const stage=$('#sep-stage');if(stage)stage.classList.remove('active');$('#scene-inner').style.display='';$('#chart-point').style.display='';$('#add-one').disabled=false;$('#add-five').disabled=false;$('#reset').textContent='↺ Làm lại';}
