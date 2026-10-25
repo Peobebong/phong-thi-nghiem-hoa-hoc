@@ -108,7 +108,15 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 .ion-cl{background:#27ae60;right:45px;top:20px;}
 @keyframes moveIon{0%{transform:translate(0,0)}50%{transform:translate(15px,10px)}100%{transform:translate(0,0)}}
 
-@media(max-width:700px){header{align-items:flex-start;padding:15px;flex-direction:column}.header-tag{white-space:normal}.brand h1{font-size:21px}.layout{padding:12px}.sidebar{grid-template-columns:repeat(4,minmax(0,1fr))}.grid,.bottom-grid{grid-template-columns:1fr}.intro{align-items:flex-start;flex-direction:column}.scene{min-height:300px;padding:18px 8px 12px}.controls .spacer{display:none}.speed{width:100%;justify-content:flex-start}.equation{font-size:15px}.panel-head{padding:13px}.stat strong{font-size:20px}}
+@media(max-width:700px){
+.sep-stage.active,.chromato-stage.active,.cell-stage.active{min-height:260px;padding:12px 4px}
+.sep-funnel-view{gap:14px;transform:scale(.92);transform-origin:center}
+.sep-vessel{width:125px}
+.sep-cup{width:78px}
+.chromato-jar{width:125px}
+.cell-container{padding:12px 8px}
+.salt-bridge{width:145px}
+header{align-items:flex-start;padding:15px;flex-direction:column}.header-tag{white-space:normal}.brand h1{font-size:21px}.layout{padding:12px}.sidebar{grid-template-columns:repeat(4,minmax(0,1fr))}.grid,.bottom-grid{grid-template-columns:1fr}.intro{align-items:flex-start;flex-direction:column}.scene{min-height:300px;padding:18px 8px 12px}.controls .spacer{display:none}.speed{width:100%;justify-content:flex-start}.equation{font-size:15px}.panel-head{padding:13px}.stat strong{font-size:20px}}
 </style>
 </head>
 <body>
@@ -125,13 +133,13 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 </aside>
 <main>
 <section class="view active" id="view-experiment">
-<div class="intro"><div><h2>Sắc ký lá cây</h2><p>Khám phá quá trình tách các sắc tố quang hợp.</p></div><div class="pill">● Mô phỏng đang sẵn sàng</div></div>
+<div class="intro"><div><h2>Sắc ký lá cây</h2><p>Khám phá quá trình tách các sắc tố quang hợp.</p></div><div class="pill">● Mô phỏng tương tác</div></div>
 <div class="tabs" role="group" aria-label="Chọn thí nghiệm"><button class="tab active" data-experiment="precipitation">01 · Sắc ký lá cây</button><button class="tab" data-experiment="cell">02 · Pin điện hóa</button><button class="tab" data-experiment="separation">03 · Tách lớp</button></div>
 <div class="grid">
 <div class="panel"><div class="panel-head"><h3 id="scene-title">Sắc ký giấy tách sắc tố lá cây</h3><span class="sub" id="scene-subtitle">Dịch chiết lá + Hệ dung môi hữu cơ</span></div>
 <div class="scene" id="scene"><div class="scene-caption"><b>QUAN SÁT TRỰC TIẾP</b> · <span id="scene-caption">Dung môi di chuyển kéo theo các sắc tố</span></div>
 <div class="scene-inner" id="scene-inner" style="display:flex;align-items:center;justify-content:center;min-height:280px">
-  <div class="chromato-stage active" id="chromato-stage" style="display:flex">
+  <div class="chromato-stage active" id="chromato-stage">
     <div class="chromato-jar" id="chromato-jar">
       <div class="chromato-solvent"></div>
       <div class="chromato-paper">
@@ -147,7 +155,7 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
 <div class="controls" id="experiment-controls"><button class="btn primary" id="add-one">▶ Chạy sắc ký</button><button class="btn" id="add-five">↺ Đặt lại giấy</button><button class="btn" id="reset">↺ Làm mới</button><div class="spacer"></div></div>
 </div>
 <div class="right-stack">
-<div class="panel"><div class="panel-head"><h3>📊 Kết quả quan sát</h3><span class="sub" id="status">Sẵn sàng</span></div><div class="stat-row"><div class="stat"><label id="stat-label-one">Quá trình</label><strong id="volume">Chưa chạy</strong><small id="volume-note">Nhấn Chạy sắc ký</small></div><div class="stat"><label id="stat-label-two">Số vạch tách</label><strong id="ph">4 vạch màu</strong><small id="ph-note">Caroten đến Clorophyl b</small></div></div><div class="result-body"><h4 class="section-title" id="observation-title">Hiện tượng</h4><div class="notice" id="observation" aria-live="polite"><strong>Chuẩn bị:</strong> Chấm dịch chiết lá lên giấy sắc ký rồi nhúng vào ống nghiệm chứa dung môi[span_0](start_span)[span_0](end_span).</div><div class="equation" id="equation">Sắc tố tan khác nhau trong dung môi & bám khác nhau trên giấy</div><h4 class="section-title">Giải thích nhanh</h4><p id="explanation" style="font-size:12px;line-height:1.65;color:#a9cbd8;margin:0">Dựa vào độ hòa tan và hệ số phân bố, các sắc tố di chuyển với tốc độ khác nhau tạo thành các vạch riêng biệt.</p></div></div>
+<div class="panel"><div class="panel-head"><h3>📊 Kết quả quan sát</h3><span class="sub" id="status">Sẵn sàng</span></div><div class="stat-row"><div class="stat"><label id="stat-label-one">Quá trình</label><strong id="volume">Chưa chạy</strong><small id="volume-note">Nhấn Chạy sắc ký</small></div><div class="stat"><label id="stat-label-two">Số vạch tách</label><strong id="ph">4 vạch màu</strong><small id="ph-note">Caroten đến Clorophyl b</small></div></div><div class="result-body"><h4 class="section-title" id="observation-title">Hiện tượng</h4><div class="notice" id="observation" aria-live="polite"><strong>Chuẩn bị:</strong> Chấm dịch chiết lá lên giấy sắc ký rồi nhúng vào ống nghiệm chứa dung môi.</div><div class="equation" id="equation">Sắc tố tan khác nhau trong dung môi & bám khác nhau trên giấy</div><h4 class="section-title">Giải thích nhanh</h4><p id="explanation" style="font-size:12px;line-height:1.65;color:#a9cbd8;margin:0">Dựa vào độ hòa tan và hệ số phân bố, các sắc tố di chuyển với tốc độ khác nhau tạo thành các vạch riêng biệt.</p></div></div>
 </div></div>
 
 <!-- Khu vực kiến thức bổ sung -->
@@ -159,21 +167,21 @@ main{min-width:0}.intro{display:flex;align-items:flex-end;justify-content:space-
   <b>Sắc tố</b><b>Màu</b><b>Rᶠ mẫu</b>
   <span>β-carotene</span><span>Vàng cam</span><span>0,95</span>
   <span>Xanthophyll</span><span>Vàng</span><span>0,71</span>
-  <span>Diệp lục a</span><span>Lục làm</span><span>0,65</span>
+  <span>Diệp lục a</span><span>Lục đậm</span><span>0,65</span>
   <span>Diệp lục b</span><span>Lục vàng</span><span>0,45</span>
 </div>
-<div class="notice">Rᶠ = quãng đường sắc tố / quãng đường dung môi[span_1](start_span)[span_1](end_span).</div>
+<div class="notice">Rᶠ = quãng đường sắc tố / quãng đường dung môi.</div>
 </div>
 </div>
 </div>
 
-<div class="bottom-grid"><div class="panel steps"><h3 style="margin:0 0 8px;font-size:14px">🧭 Các bước thực hiện</h3><div class="step"><span class="num">1</span><span>Nghiền lá với dung môi chiết phù hợp, lọc lấy dịch chứa hỗn hợp sắc tố[span_2](start_span)[span_2](end_span).</span></div><div class="step"><span class="num">2</span><span>Chấm một vết nhỏ, đậm lên vạch bút chì và để khô[span_3](start_span)[span_3](end_span).</span></div><div class="step"><span class="num">3</span><span>Nhúng giấy vào ống nghiệm có dung môi thấp hơn vết mẫu[span_4](start_span)[span_4](end_span).</span></div><div class="step"><span class="num">4</span><span>Quan sát sự tách các vạch sắc tố màu[span_5](start_span)[span_5](end_span).</span></div></div>
+<div class="bottom-grid"><div class="panel steps"><h3 style="margin:0 0 8px;font-size:14px">🧭 Các bước thực hiện</h3><div class="step"><span class="num">1</span><span>Nghiền lá với dung môi chiết phù hợp, lọc lấy dịch chứa hỗn hợp sắc tố.</span></div><div class="step"><span class="num">2</span><span>Chấm một vết nhỏ, đậm lên vạch bút chì và để khô.</span></div><div class="step"><span class="num">3</span><span>Nhúng giấy vào ống nghiệm có dung môi thấp hơn vết mẫu.</span></div><div class="step"><span class="num">4</span><span>Quan sát sự tách các vạch sắc tố màu.</span></div></div>
 <div class="panel steps"><h3 style="margin:0 0 8px;font-size:14px">🔎 Lưu ý quan trọng</h3><div class="mini-cards"><div class="mini"><b>Dung môi</b><span>Hệ dung môi phân cực hoặc không phân cực phù hợp.</span></div><div class="mini"><b>Vạch mẫu</b><span>Mực dung môi không được ngập quá vết chấm mẫu.</span></div><div class="mini"><b>Hệ số Rᶠ</b><span>Đặc trưng cho mỗi chất trong điều kiện xác định.</span></div><div class="mini"><b>Ứng dụng</b><span>Tách và phân tích hàm lượng sắc tố thực vật.</span></div></div></div></div>
 </section>
 <section class="view" id="view-knowledge"><div class="intro"><div><h2>Góc kiến thức</h2><p>Tóm tắt khái niệm quan trọng trong các thí nghiệm.</p></div></div>
 <div class="panel" style="margin-bottom:14px;"><div class="panel-head"><h3>📘 01 · Sắc ký giấy tách sắc tố lá cây</h3></div><div class="result-body"><h4 class="section-title">1. Nguyên tắc sắc ký</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">Dựa vào độ hòa tan khác nhau của các sắc tố trong hệ dung môi hữu cơ và mức độ hấp phụ khác nhau trên giấy sắc ký.</p><h4 class="section-title">2. Các vạch sắc tố thu được (từ trên xuống)</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">• <b>Caroten</b> (màu cam): Di chuyển nhanh nhất, ít bám giấy.<br>• <b>Xantophin</b> (màu vàng): Sắc tố vàng hòa tan.<br>• <b>Clorophyl a</b> (xanh lá đậm): Sắc tố diệp lục chính.<br>• <b>Clorophyl b</b> (xanh lá nhạt): Sắc tố diệp lục phụ.</p></div></div>
-<div class="panel" style="margin-bottom:14px;"><div class="panel-head"><h3>📘 02 · Pin điện hóa (Galvani Zn - Cu)</h3></div><div class="result-body"><h4 class="section-title">1. Quá trình oxi hóa - khử</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">• <b>Cực âm (Anode - Zn):</b> Xảy ra sự oxi hóa: Zn → Zn²⁺ + 2e⁻ (Thanh kẽm tan dần)[span_6](start_span)[span_6](end_span).<br>• <b>Cực dương (Cathode - Cu):</b> Xảy ra sự khử: Cu²⁺ + 2e⁻ → Cu (Thanh đồng lớn lên)[span_7](start_span)[span_7](end_span).</p><h4 class="section-title">2. Vai trò cầu muối</h4><div class="notice">Cầu muối chứa chất điện ly (như KCl) giúp khép kín mạch điện và duy trì sự trung hòa điện tích giữa hai dung dịch cốc nửa tế bào[span_8](start_span)[span_8](end_span).</div></div></div>
-<div class="panel"><div class="panel-head"><h3>📘 03 · Tách chất lỏng bằng phễu chiết</h3></div><div class="result-body"><h4 class="section-title">1. Nguyên tắc</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">Dùng để tách các chất lỏng không hòa tan vào nhau và có khối lượng riêng khác nhau[span_9](start_span)[span_9](end_span) (ví dụ: dầu ăn và nước).</p><h4 class="section-title">2. Hiện tượng & Thao tác</h4><div class="notice">Chất lỏng có khối lượng riêng lớn hơn (nước) nằm ở lớp dưới và được tháo trước qua khóa phễu chiết xuống cốc hứng; chất lỏng nhẹ hơn (dầu) ở trên được giữ lại trong phễu[span_10](start_span)[span_10](end_span).</div></div></div>
+<div class="panel" style="margin-bottom:14px;"><div class="panel-head"><h3>📘 02 · Pin điện hóa (Galvani Zn - Cu)</h3></div><div class="result-body"><h4 class="section-title">1. Quá trình oxi hóa - khử</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">• <b>Cực âm (Anode - Zn):</b> Xảy ra sự oxi hóa: Zn → Zn²⁺ + 2e⁻ (Thanh kẽm tan dần).<br>• <b>Cực dương (Cathode - Cu):</b> Xảy ra sự khử: Cu²⁺ + 2e⁻ → Cu (Thanh đồng lớn lên).</p><h4 class="section-title">2. Vai trò cầu muối</h4><div class="notice">Cầu muối chứa chất điện ly (như KCl) giúp khép kín mạch điện và duy trì sự trung hòa điện tích giữa hai dung dịch cốc nửa tế bào.</div></div></div>
+<div class="panel"><div class="panel-head"><h3>📘 03 · Tách chất lỏng bằng phễu chiết</h3></div><div class="result-body"><h4 class="section-title">1. Nguyên tắc</h4><p style="color:#b7d6e1;line-height:1.7;font-size:13px">Dùng để tách các chất lỏng không hòa tan vào nhau và có khối lượng riêng khác nhau (ví dụ: dầu ăn và nước).</p><h4 class="section-title">2. Hiện tượng & Thao tác</h4><div class="notice">Chất lỏng có khối lượng riêng lớn hơn (nước) nằm ở lớp dưới và được tháo trước qua khóa phễu chiết xuống cốc hứng; chất lỏng nhẹ hơn (dầu) ở trên được giữ lại trong phễu.</div></div></div>
 </section>
 <section class="view" id="view-challenge"><div class="intro"><div><h2>Thử thách kiến thức</h2><p>Chọn đáp án rồi kiểm tra để nhận phản hồi cho các thí nghiệm.</p></div></div><div class="panel"><div class="panel-head"><h3>🧠 Kiểm tra nhanh</h3><span class="sub" id="quiz-count">Câu 1 / 4</span></div><div class="quiz" id="quiz-area"><p id="quiz-question" style="font-size:15px;color:#e4f6fa">Trong thí nghiệm sắc ký lá cây, sắc tố nào di chuyển nhanh nhất và ở vị trí cao nhất trên giấy?</p><div class="answers" id="quiz-answers"></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"><button class="btn primary" id="check-answer">Kiểm tra đáp án</button><button class="btn" id="next-question">Câu tiếp theo →</button></div><div id="quiz-feedback" class="feedback" aria-live="polite"></div></div></div></section>
 <section class="view" id="view-guide"><div class="intro"><div><h2>Hướng dẫn sử dụng</h2><p>Cách thao tác trong phòng thí nghiệm ảo.</p></div></div><div class="panel"><div class="result-body"><div class="step"><span class="num">1</span><span>Chọn một trong các thí nghiệm ở thanh lựa chọn phía trên.</span></div><div class="step"><span class="num">2</span><span>Tương tác trực tiếp bằng cách bấm nút mô phỏng.</span></div><div class="step"><span class="num">3</span><span>Đọc hiện tượng, phương trình và phần giải thích ở kết quả.</span></div><div class="notice">Đây là mô hình giáo dục trực quan tương thích tuyệt vời trên điện thoại và máy tính.</div></div></div></section>
@@ -186,9 +194,9 @@ const $=s=>document.querySelector(s);const $$=s=>Array.from(document.querySelect
 let experiment='precipitation',quizIndex=0,quizChecked=false;
 const quiz=[
 {q:'Trong thí nghiệm sắc ký lá cây, sắc tố nào di chuyển nhanh nhất và ở vị trí cao nhất trên giấy?',a:['Clorophyl a','Xantophin','Caroten','Clorophyl b'],correct:2,why:'Caroten ít bị bám giữ trên giấy và hòa tan tốt trong dung môi nên di chuyển nhanh và xa nhất.'},
-{q:'Trong pin Galvani (Zn - Cu), quá trình nào xảy ra ở thanh kẽm (Anode)?',a:['Ion Cu²⁺ nhận electron thành Cu','Thanh kẽm bị oxi hóa, tan dần thành ion Zn²⁺','Không có hiện tượng gì','Thanh kẽm to lên do bám đồng'],correct:1,why:'Tại anode kẽm, Zn bị oxi hóa thành Zn²⁺ và giải phóng 2 electron đi ra mạch ngoài[span_11](start_span)[span_11](end_span).'},
-{q:'Khi dùng phễu chiết để tách hỗn hợp dầu ăn và nước, chất lỏng nào nằm ở lớp dưới?',a:['Dầu ăn','Nước','Cả hai hòa tan đều nhau','Tùy thuộc vào nhiệt độ'],correct:1,why:'Nước có khối lượng riêng lớn hơn dầu ăn nên lắng xuống lớp phía dưới phễu chiết[span_12](start_span)[span_12](end_span).'},
-{q:'Vai trò chính của cầu muối trong pin điện hóa là gì?',a:['Cung cấp thêm điện tích dương','Khép kín mạch điện và duy trì trung hòa điện tích giữa 2 dung dịch','Làm tăng nhiệt độ của pin','Làm chất xúc tác phản ứng'],correct:1,why:'Cầu muối giúp ion di chuyển giữa hai cốc để cân bằng điện tích, giúp pin hoạt động liên tục[span_13](start_span)[span_13](end_span).'}
+{q:'Trong pin Galvani (Zn - Cu), quá trình nào xảy ra ở thanh kẽm (Anode)?',a:['Ion Cu²⁺ nhận electron thành Cu','Thanh kẽm bị oxi hóa, tan dần thành ion Zn²⁺','Không có hiện tượng gì','Thanh kẽm to lên do bám đồng'],correct:1,why:'Tại anode kẽm, Zn bị oxi hóa thành Zn²⁺ và giải phóng 2 electron đi ra mạch ngoài.'},
+{q:'Khi dùng phễu chiết để tách hỗn hợp dầu ăn và nước, chất lỏng nào nằm ở lớp dưới?',a:['Dầu ăn','Nước','Cả hai hòa tan đều nhau','Tùy thuộc vào nhiệt độ'],correct:1,why:'Nước có khối lượng riêng lớn hơn dầu ăn nên lắng xuống lớp phía dưới phễu chiết.'},
+{q:'Vai trò chính của cầu muối trong pin điện hóa là gì?',a:['Cung cấp thêm điện tích dương','Khép kín mạch điện và duy trì trung hòa điện tích giữa 2 dung dịch','Làm tăng nhiệt độ của pin','Làm chất xúc tác phản ứng'],correct:1,why:'Cầu muối giúp ion di chuyển giữa hai cốc để cân bằng điện tích, giúp pin hoạt động liên tục.'}
 ];
 function updateKnowledgeCard(key){
     const container=$('#dynamic-knowledge-cards');
@@ -200,32 +208,32 @@ function updateKnowledgeCard(key){
               <b>Sắc tố</b><b>Màu</b><b>Rᶠ mẫu</b>
               <span>β-carotene</span><span>Vàng cam</span><span>0,95</span>
               <span>Xanthophyll</span><span>Vàng</span><span>0,71</span>
-              <span>Diệp lục a</span><span>Lục làm</span><span>0,65</span>
+              <span>Diệp lục a</span><span>Lục đậm</span><span>0,65</span>
               <span>Diệp lục b</span><span>Lục vàng</span><span>0,45</span>
             </div>
-            <div class="notice">Rᶠ = quãng đường sắc tố / quãng đường dung môi[span_14](start_span)[span_14](end_span).</div>
+            <div class="notice">Rᶠ = quãng đường sắc tố / quãng đường dung môi.</div>
             </div></div>
         `;
     }else if(key==='cell'){
         container.innerHTML=`
             <div class="panel"><div class="panel-head"><h3>📘 01 / Điện cực kẽm</h3></div><div class="result-body">
             <h4 class="section-title">Zn → Zn²⁺ + 2e⁻</h4>
-            <p style="color:#b7d6e1;font-size:13px">Kẽm bị oxi hóa, tan dần. Electron đi từ điện cực Zn qua mạch ngoài đến điện cực Cu[span_15](start_span)[span_15](end_span).</p>
+            <p style="color:#b7d6e1;font-size:13px">Kẽm bị oxi hóa, tan dần. Electron đi từ điện cực Zn qua mạch ngoài đến điện cực Cu.</p>
             </div></div>
             <div class="panel"><div class="panel-head"><h3>📘 02 / Cầu muối</h3></div><div class="result-body">
             <h4 class="section-title">Cl⁻ ← &nbsp;&nbsp; → K⁺</h4>
-            <p style="color:#b7d6e1;font-size:13px">Cl⁻ đi về ngăn Zn, K⁺ đi về ngăn Cu, giúp duy trì trung hòa điện trong hai dung dịch[span_16](start_span)[span_16](end_span).</p>
+            <p style="color:#b7d6e1;font-size:13px">Cl⁻ đi về ngăn Zn, K⁺ đi về ngăn Cu, giúp duy trì trung hòa điện trong hai dung dịch.</p>
             </div></div>
             <div class="panel"><div class="panel-head"><h3>📘 03 / Điện cực đồng</h3></div><div class="result-body">
             <h4 class="section-title">Cu²⁺ + 2e⁻ → Cu</h4>
-            <p style="color:#b7d6e1;font-size:13px">Ion Cu²⁺ bị khử thành đồng bám lên điện cực. Phản ứng tổng: Zn + Cu²⁺ → Zn²⁺ + Cu[span_17](start_span)[span_17](end_span).</p>
+            <p style="color:#b7d6e1;font-size:13px">Ion Cu²⁺ bị khử thành đồng bám lên điện cực. Phản ứng tổng: Zn + Cu²⁺ → Zn²⁺ + Cu.</p>
             </div></div>
         `;
     }else if(key==='separation'){
         container.innerHTML=`
             <div class="panel"><div class="panel-head"><h3>📘 04 / Khi nào dùng phương pháp chiết?</h3></div><div class="result-body">
-            <p style="color:#b7d6e1;font-size:13px;line-height:1.6">Dùng phễu chiết để tách các chất lỏng không trộn lẫn, đã tạo thành các lớp có khối lượng riêng khác nhau[span_18](start_span)[span_18](end_span).</p>
-            <div class="notice">Không thể tách ethanol và nước bằng phễu chiết vì chúng trộn lẫn vào nhau[span_19](start_span)[span_19](end_span).</div>
+            <p style="color:#b7d6e1;font-size:13px;line-height:1.6">Dùng phễu chiết để tách các chất lỏng không trộn lẫn, đã tạo thành các lớp có khối lượng riêng khác nhau.</p>
+            <div class="notice">Không thể tách ethanol và nước bằng phễu chiết vì chúng trộn lẫn vào nhau.</div>
             </div></div>
         `;
     }
@@ -265,7 +273,7 @@ function setExp(key){
         $('#volume-note').textContent='Nhấn Chạy sắc ký';
         $('#ph-note').textContent='Caroten đến Clorophyl b';
         $('#equation').textContent='Sắc tố tan khác nhau trong dung môi & bám khác nhau trên giấy';
-        $('#observation').innerHTML='<strong>Chuẩn bị:</strong> Chấm dịch chiết lá lên giấy sắc ký rồi nhúng vào ống nghiệm chứa dung môi[span_20](start_span)[span_20](end_span).';
+        $('#observation').innerHTML='<strong>Chuẩn bị:</strong> Chấm dịch chiết lá lên giấy sắc ký rồi nhúng vào ống nghiệm chứa dung môi.';
         $('#add-one').textContent='▶ Chạy sắc ký';
         $('#add-five').textContent='↺ Đặt lại giấy';
         $('#status').textContent='Sẵn sàng';
@@ -279,13 +287,14 @@ function setExp(key){
         $('#ph').textContent='Đèn sáng';
         $('#volume-note').textContent='Dòng điện khép kín';
         $('#ph-note').textContent='Ion trung hòa điện';
-        $('#equation').textContent='Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)[span_21](start_span)[span_21](end_span)';
+        $('#equation').textContent='Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)';
         $('#observation').innerHTML='<strong>Có cầu muối:</strong> Dòng electron được duy trì qua mạch ngoài, ion di chuyển qua cầu muối, bóng đèn sáng.';
         $('#add-one').textContent='🔌 Tháo / Lắp cầu muối';
         $('#add-five').textContent='⏸ Tạm dừng';
         $('#status').textContent='Pin hoạt động';
     }else if(key==='separation'){
         sepStep=0;
+        $('#add-one').disabled=false; $('#add-five').disabled=false;
         renderSeparation();
     }
 }
@@ -306,7 +315,19 @@ $('#add-five').addEventListener('click',()=>{
         const jar=$('#chromato-jar');
         if(jar) jar.classList.remove('running');
         $('#volume').textContent='Chưa chạy';
+        $('#volume-note').textContent='Nhấn Chạy sắc ký';
         $('#status').textContent='Sẵn sàng';
+    } else if(experiment==='cell'){
+        const cellStage=$('#cell-stage');
+        if(cellStage){
+            cellStage.classList.toggle('running');
+            const running=cellStage.classList.contains('running');
+            $('#status').textContent=running?'Pin hoạt động':'Đang tạm dừng';
+            $('#ph').textContent=running?'Đèn sáng':'Đèn tắt';
+            $('#observation').innerHTML=running
+              ?'<strong>Có cầu muối:</strong> Dòng electron được duy trì qua mạch ngoài, ion di chuyển qua cầu muối, bóng đèn sáng.'
+              :'<strong>Tạm dừng:</strong> Hiệu ứng chuyển động của electron và ion đã tạm dừng.';
+        }
     }
 });
 $('#reset').addEventListener('click',()=>{
@@ -351,6 +372,8 @@ function renderChromato(){
 
 let sepStep=0;
 function renderSeparation(){
+    $('#add-one').disabled=false;
+    $('#add-five').disabled=false;
     const scene=$('#scene');
     let stage=$('#sep-stage');
     if(!stage){
@@ -471,7 +494,19 @@ function renderCell(){
         `;
         scene.appendChild(cellStage);
     }
+    const bridge = $('#salt-bridge');
+    if (bridge) bridge.classList.remove('removed');
     cellStage.classList.add('active');
+    cellStage.classList.add('running');
+    $('#add-one').disabled=false;
+    $('#add-five').disabled=false;
+    $('#volume').textContent='Đã lắp cầu muối';
+    $('#ph').textContent='Đèn sáng';
+    $('#volume-note').textContent='Dòng điện khép kín';
+    $('#ph-note').textContent='Ion trung hòa điện';
+    $('#status').textContent='Pin hoạt động';
+    $('#observation').innerHTML='<strong>Có cầu muối:</strong> Dòng electron được duy trì qua mạch ngoài, ion di chuyển qua cầu muối, bóng đèn sáng.';
+    $('#equation').textContent='Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)';
     $('#add-one').textContent='🔌 Tháo / Lắp cầu muối';
     $('#add-five').textContent='⏸ Tạm dừng / Chạy';
 }
@@ -491,7 +526,7 @@ function addCellAction(){
             cellStage.classList.remove('running');
             $('#volume').textContent='Đã tháo cầu muối';
             $('#status').textContent='Ngắt mạch';
-            $('#observation').innerHTML='<strong>Không có cầu muối:</strong> Mạch bị ngắt, đèn tắt[span_22](start_span)[span_22](end_span).';
+            $('#observation').innerHTML='<strong>Không có cầu muối:</strong> Mạch bị ngắt, đèn tắt.';
         }
     }
 }
